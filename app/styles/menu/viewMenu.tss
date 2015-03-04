@@ -1,0 +1,232 @@
+
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: viewMenu.tss
+ * Description: Menu view
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+
+"TableView": {
+	width: "300dip",
+	top: 0,
+	left: 0,
+	separatorColor: "transparent",
+	backgroundColor: "black"
+}
+"Label": {
+	touchEnabled: false
+}
+
+// submenu main header
+"#sideMenuMainHeader": {
+	height: "70dip",
+	backgroundColor: Alloy.CFG.COLOR_SIDEMENU_BG,
+	backgroundImage: Alloy.CFG.IMG_SIDEMENU_HEADER_BG,
+	selectedBackgroundImage: Alloy.CFG.IMG_SIDEMENU_CATEGORY_BG,
+	//backgroundSelectedImage: Alloy.CFG.IMG_SIDEMENU_CATEGORY_BG,
+	path: "menu/viewSplash",
+	viewID: "viewSplash"
+}
+"#sideMenuMainTitle": {
+	left: "60dip",
+	color: "white",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "26dip"}	
+}
+"#sideMenuAppIcon": {
+	width: "40dip",
+	height: "40dip",
+	left: "10dip",
+	borderRadius: "8dip",
+	image: Alloy.CFG.IMG_SIDEMENU_APP_ICON
+}
+
+// submenu sub header
+"#sideMenuSubHeader": {
+	height: "30dip", 
+	backgroundColor: Alloy.CFG.COLOR_SIDEMENU_BG,
+	backgroundImage: Alloy.CFG.IMG_SIDEMENU_CATEGORY_BG,
+	selectedBackgroundImage: Alloy.CFG.IMG_SIDEMENU_CATEGORY_BG,
+	//backgroundSelectedImage: Alloy.CFG.IMG_SIDEMENU_CATEGORY_BG,
+	touchEnabled: false,
+	bubbleParent: false,
+	className: "subHeader"
+}
+
+"#sideMenuSubHeaderTitle": {
+	left: "10dip",
+	color: Alloy.CFG.COLOR_SIDEMENU_CATEGORY_TITLE,
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "12dip", fontWeight: "bold"}
+}
+
+
+".subMenuItemClass": {
+	height: "40dip",
+	backgroundColor: Alloy.CFG.COLOR_SIDEMENU_BG,	
+	backgroundImage: Alloy.CFG.IMG_SIDEMENU_ITEM_BG,
+	selectedBackgroundImage: Alloy.CFG.IMG_SIDEMENU_ITEM_BG_PRESS,	
+	className: "menuRow"
+	//backgroundSelectedImage: Alloy.CFG.IMG_SIDEMENU_ITEM_BG_PRESS,
+}
+
+"#subMenuItemTitle": {
+	left: "45dip",
+	color: "white",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "14dip"}
+}
+
+".subMenuItemImage": {
+	left: "10dip",
+	width: "30dip",
+	height: "30",
+	touchEnabled: false
+}
+
+"#sideMenuShadow": {
+	right: "40dip",
+	width: "10dip",	
+	image: Alloy.CFG.IMG_SIDEMENU_SHADOW_BG		
+}
+
+// path for item view
+"#subMenuManageIPPT": {
+	path: Alloy.CFG.PATH_MANAGE_IPPT,
+	viewID: "viewManageIPPT"
+}
+"#subMenuIPPTResults": {
+	path: Alloy.CFG.PATH_IPPT_RESULTS,
+	viewID: "viewIPPTResult"   
+}
+"#subMenuIPPTScoreboard": {
+	path: Alloy.CFG.PATH_IPPT_SCOREBOARD,
+	viewID: "viewIPPTScoreboard"
+}
+"#subMenuIPPTRevisedScoreboard": {
+	path: Alloy.CFG.PATH_IPPT_REVISED_SCOREBOARD,
+	viewID: "viewIPPTRevisedScoreboard"
+}
+"#subMenuManageIPT": {
+	path: Alloy.CFG.PATH_MANAGE_IPT,
+	viewID: "viewManageIPT"
+}
+"#subMenuPPTStandard": {
+	path: Alloy.CFG.PATH_PPT_STANDARD,
+	viewID: "viewPPTStandard"
+}
+"#subMenuManageRT": {
+	path: Alloy.CFG.PATH_MANAGE_RT,
+	viewID: "viewManageRT"
+}
+"#subMenuWorkoutTracker": {
+	path: Alloy.CFG.PATH_WORKOUT_TRACKER,
+	viewID: "viewWorkoutTracker"   
+}
+"#subMenuCircuitTraining": {
+	path: Alloy.CFG.PATH_CIRCUIT_TRANINING,
+	viewID: "viewCircuitTraining"   
+}
+"#subMenuIPTWorkout": {
+	path: Alloy.CFG.PATH_IPT_WORKOUT,
+	viewID: "viewIPTWorkout"
+}
+"#subMenuRTWorkout": {
+	path: Alloy.CFG.PATH_RT_WORKOUT,
+	viewID: "viewRTWorkout"
+}
+"#subMenuIPPTInYourCommunity": {
+	path: Alloy.CFG.PATH_IPPT_IN_YOUR_COMMUNITY,
+	viewID: "viewIPPTInYourCommunity"
+}
+"#subMenuBodyMassIndexCalculator": {
+	path: Alloy.CFG.PATH_BODY_MASS_INDEX_CALCULATOR,
+	viewID: "viewBodyMassIndexCalculator"
+}
+"#subMenuWeatherForecast": {
+	path: Alloy.CFG.PATH_WEATHER_FORECAST,
+	viewID: "viewWeatherForecast"
+}
+"#subMenuUpdateContact": {
+	path: Alloy.CFG.PATH_UPDATE_CONTACT,
+	viewID: "viewUpdateContact"
+}
+
+"#subMenuMyProfile": {
+	path: Alloy.CFG.PATH_MY_PROFILE,
+	viewID: "viewMyProfile"
+}
+"#subMenuUserGuide": {
+	path: Alloy.CFG.PATH_USER_GUIDE,
+	viewID: "viewUserGuide"
+}
+"#subMenuFeedback": {
+	path: Alloy.CFG.PATH_FEEDBACK,
+	viewID: "viewFeedback"
+}
+"#subMenuContactUs": {
+	path: Alloy.CFG.PATH_CONTACT_US,
+	viewID: "viewContactUs"
+}
+
+// images for side menu icons
+"#subMenuImageManageIPPT": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_MANAGE_IPPT
+}
+"#subMenuImageIPPTResults": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPPT_RESULT
+}
+"#subMenuImageIPPTScoreboard": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPPT_SCOREBOARD
+}
+"#subMenuImageIPPTRevisedScoreboard": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPPT_REVISED_SCOREBOARD
+}
+"#subMenuImageManageIPT": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_MANAGE_IPT
+}
+"#subMenuImagePPTStandard": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_PPT_STANDARD
+}
+"#subMenuImageManageRT": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_MANAGE_RT
+}
+"#subMenuImageWorkoutTracker": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_WORKOUT_TRACKER
+}
+"#subMenuImageCircuitTraining": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_CIRCUIT_TRAINING
+}
+"#subMenuImageIPTWorkout": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPT_WORKOUT
+}
+"#subMenuImageRTWorkout": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_RT_WORKOUT
+}
+"#subMenuImageIPPTInYourCommunity": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPPT_IN_YOUR_COMMUNITY
+}
+"#subMenuImageBodyMassIndexCalculator": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_BODY_MASS_INDEX_CALCULATOR
+}
+"#subMenuImageWeatherForecast": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_WEATHER_FORECAST
+}
+"#subMenuImageUpdateContact": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_UPDATE_CONTACT
+}
+"#subMenuImageMyProfile": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_MY_PROFILE
+}
+"#subMenuImageUserGuide": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_USER_GUIDE
+}
+"#subMenuImageFeedback": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_FEEDBACK
+}
+"#subMenuImageContactUs": {
+	image: Alloy.CFG.IMG_SIDEMENU_ICON_CONTACT_US
+}

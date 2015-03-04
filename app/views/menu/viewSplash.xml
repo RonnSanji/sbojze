@@ -1,0 +1,26 @@
+
+<!--
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: viewSplash.xml
+ * Description: Splash page
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+-->
+
+<Alloy>
+    <View id="viewSplash">
+        <View id="viewImageSplash"/>
+        <Label id="labelAppName"/>
+        <View id="viewPSIBase">
+        	<View id="viewPSI"/>
+        	<Label id="labelPSI"/>
+        </View>           
+    </View>
+</Alloy>

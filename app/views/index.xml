@@ -1,5 +1,31 @@
+<!--
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: index.xml
+ * Description: 
+ * 
+ * ChangeLog: 
+ * 01/03/2014 ver 1
+ * - first version
+ * 
+ * 
+ * 
+ */
+-->
+
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
-	</Window>
+    <Window class="win" backgroundColor="white" onAndroidback="OnAndroidBack">
+        <!--> menu table -->
+        <Require id="viewMenu" src="menu/viewMenu" type="view"/>
+        <!--> base view -->
+        <!--View id="viewBase" onSwipe="OnSwipe" onTouchstart="OnTouchStart" onTouchend="OnTouchEnd" onTouchmove="OnTouchMove"-->
+        <View id="viewBase">
+            <Require id="navigationBar" src="navigationBar"/>
+            <ImageView id="logoSAF"/>   
+            <View class="viewProtector" id="viewProtectorPage"/>              
+        </View>    
+   		<View class="viewProtector" id="viewProtectorWin" top="0"/>             
+    </Window>    
 </Alloy>

@@ -1,0 +1,24 @@
+
+<!--
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: navigationBar.xml
+ * Description: Navigator Bar
+ *
+ * ChangeLog: 
+ *  
+ * 
+ */
+-->
+
+<Alloy>
+   <View id="viewNavigatorBar">
+       <Label id="title"/>
+       <Label id="labelVersion"/>
+       <Button id="btnMenu" onClick="OnBtnMenuClick"></Button>
+       <Button id="btnAction" onClick ="OnBtnActionClick"></Button>  
+       <Button id="btnBack" onClick="OnBtnBackClick"></Button>       
+   </View>
+</Alloy>

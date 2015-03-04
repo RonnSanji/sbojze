@@ -1,0 +1,69 @@
+
+<!--
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: viewMenu.xml
+ * Description: Menu view
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+-->
+
+<Alloy>
+	
+    <TableView id="table" onClick="OnItemClick">
+       <TableViewRow id="sideMenuMainHeader">
+          <ImageView id="sideMenuAppIcon"/>
+          <Label id="sideMenuMainTitle" text="Ezjobs"/>
+          <!--ImageView id="sideMenuShadow" height="70dip"/-->
+       </TableViewRow>    
+  
+       <TableViewRow class="subMenuItemClass" id="subMenuManageIPPT">
+          <Label id="subMenuItemTitle" text="Manage IPPT"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageManageIPPT"/>
+          <!--ImageView id="sideMenuShadow" height="40dip"/-->
+       </TableViewRow>     
+       <TableViewRow class="subMenuItemClass" id="subMenuIPPTResults">
+          <Label id="subMenuItemTitle" text="IPPT Results"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageIPPTResults"/>
+          <!--ImageView id="sideMenuShadow" height="40dip"/-->
+       </TableViewRow>     
+       <TableViewRow class="subMenuItemClass" id="subMenuIPPTScoreboard">
+          <Label id="subMenuItemTitle" text="IPPT 5-Station Scoreboard"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageIPPTScoreboard"/>
+          
+       </TableViewRow>  
+       
+       <!-- New revised IPPT scoreboard-->
+       <TableViewRow class="subMenuItemClass" id="subMenuIPPTRevisedScoreboard">
+          <Label id="subMenuItemTitle" text="IPPT 3-Station Scoreboard"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageIPPTRevisedScoreboard"/>
+          
+       </TableViewRow>  
+       
+       <TableViewRow class="subMenuItemClass" id="subMenuManageIPT">
+          <Label id="subMenuItemTitle" text="Manage IPT"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageManageIPT"/>
+          <!--ImageView id="sideMenuShadow" height="40dip"/-->
+       </TableViewRow> 
+       <TableViewRow class="subMenuItemClass" id="subMenuPPTStandard">
+          <Label id="subMenuItemTitle" text="PPT Standard"/>
+          <ImageView class="subMenuItemImage" id="subMenuImagePPTStandard"/>
+          <!--ImageView id="sideMenuShadow" height="40dip"/-->
+       </TableViewRow>
+       <TableViewRow class="subMenuItemClass" id="subMenuManageRT">
+          <Label id="subMenuItemTitle" text="Manage RT"/>
+          <ImageView class="subMenuItemImage" id="subMenuImageManageRT"/>
+          <!--ImageView id="sideMenuShadow" height="40dip"/-->
+       </TableViewRow>
+       
+     
+       
+   </TableView>
+   <ImageView id="sideMenuShadow" left="250dip" height="Ti.UI.FILL"/>
+</Alloy>

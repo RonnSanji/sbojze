@@ -1,15 +1,69 @@
-".container": {
-	backgroundColor:"white"
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: index.tss
+ * Description: 
+ * 
+ * ChangeLog: 
+ * 01/03/2014 ver 1
+ * - first version
+ * 
+ * 03/03/2014 ver 2
+ * - revert to Titanium SDK 3.1.3GA
+ * 
+ * 05/03/2014 ver 3
+ * - updated to Titanium SDK 3.2.1GA
+ * 
+ * - workaround for iOS titanium bug on textfield blur event fired twice
+ * - https://jira.appcelerator.org/browse/TIMOB-16496
+ * 
+ * - updated on map module for iOS (titanium SDK 3.2 onwards)  
+ * 
+ * 
+ * 
+ */
+
+".win[platform=android]": {
+	navBarHidden: true,
+	exitOnClose: true,
+	//modal: true	
+}
+
+".win[platform=ios]": {
+	//top:  Alloy.CFG.SET_WINDOW_TOP_FOR_IOS_7
+	top: 0
 }
 
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	color: "#000"
+} 
+
+"#viewBase": {
+	//left: "260dip",
+	width: "100%",
+	height: "100%",
+	backgroundImage: Alloy.CFG.IMG_DEFAULT_SPLASH
 }
 
-"#label": {
-	font: {
-		fontSize: 12
-	}
+".viewProtector": {
+	top: "44dip",
+	bottom: 0,
+	zIndex: 99,
+	//opacity: 0.5,
+	visible: false
+	
 }
+
+"#logoSAF": {
+	right: "2dip",
+	bottom: 0,
+	width: "40dip",
+	height: "40dip",
+	image: Alloy.CFG.IMG_SAF_LOGO,
+	touchEnabled: false,
+	zIndex: 1
+}
+

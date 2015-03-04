@@ -1,0 +1,54 @@
+
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: viewSplash.tss
+ * Description: Splash page
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+
+"#viewSplash": {
+	top: "44dip",
+	bottom: 0
+}
+
+"#viewImageSplash": {
+	top: "-44dip",
+	//width: "100%",
+	//height: "100%",
+	//backgroundColor: "white"
+	backgroundImage: Alloy.CFG.IMG_DEFAULT_SPLASH
+}
+
+"#labelAppName": {
+	top: "50dip",
+	text:"MyIPPT",
+	color: "white",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "30dip"}	
+}
+
+"#viewPSIBase": {
+	bottom: "70dip",
+	left: "5%",
+	right: "5%",
+	height: "30dip"	
+}
+
+"#viewPSI": {
+	left: "0dip",
+	right: "0dip",
+	height: "100%",
+	backgroundColor: "black",
+	opacity: "0.8"
+}
+
+"#labelPSI": {
+	color: "white",
+	text: "Fetching PSI data",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "14dip", fontweight: "bold"}	
+}

@@ -1,0 +1,57 @@
+
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: navigationBar.tss
+ * Description: Navigator Bar
+ *
+ * ChangeLog: 
+ *  
+ * 
+ */
+
+"View": {
+	top: 0,
+	height: "51dip",
+	backgroundImage: Alloy.CFG.IMG_HEADER_BG
+}
+
+"Button": {
+	width: "40dip",
+	height: "30dip",
+	top: "7dip"	
+}
+
+"#title": {
+	color: "white",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "16dip"}	
+}
+
+"#labelVersion": {
+	color: "yellow",
+	bottom: "5dip",
+	//text: "Android Ver: 15.mock",
+	font: {fontFamily: Alloy.CFG.FONT_FAMILY_COMMON, fontSize: "12dip", fontWeight: "bold"}
+}
+
+"#btnMenu": {	
+	left: "7dip",
+	backgroundImage: Alloy.CFG.IMG_BTN_MENU,
+	backgroundSelectedImage: Alloy.CFG.IMG_BTN_MENU_PRESS,
+	visible: true
+}
+
+"#btnAction": {	
+	right: "7dip",
+	backgroundImage: Alloy.CFG.IMG_BTN_ACTION,
+	backgroundSelectedImage: Alloy.CFG.IMG_BTN_ACTION_PRESS,
+	visible: false
+}
+
+"#btnBack": {	
+	left: "7dip",
+	backgroundImage: Alloy.CFG.IMG_BTN_BACK,
+	backgroundSelectedImage: Alloy.CFG.IMG_BTN_BACK_PRESS,
+	visible: false
+}

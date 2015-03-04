@@ -5,7 +5,7 @@
     <version>1.0</version>
     <publisher>RonnSanji</publisher>
     <url>http://</url>
-    <description/>
+    <description>undefined</description>
     <copyright>2015 by RonnSanji</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
@@ -13,11 +13,9 @@
     <analytics>true</analytics>
     <guid>2a2f68c3-c7e0-4334-9f0c-cd46567628d5</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
-    
     <property name="acs-api-key-development" type="string">RZ97QoVNhdjopc7qWEFYnuVZLMlxOFlQ</property>
     <property name="acs-oauth-key-development" type="string">IrYSN7voysJEGkAxZv39PQJgIXMgUeKH</property>
     <property name="acs-oauth-secret-development" type="string">Vl5cxi9OSMyx3Fpfj1s6pIS0aVRY7Pcs</property>
-
     <property name="acs-api-key-production" type="string">RZ97QoVNhdjopc7qWEFYnuVZLMlxOFlQ</property>
     <property name="acs-oauth-key-production" type="string">IrYSN7voysJEGkAxZv39PQJgIXMgUeKH</property>
     <property name="acs-oauth-secret-production" type="string">Vl5cxi9OSMyx3Fpfj1s6pIS0aVRY7Pcs</property>
