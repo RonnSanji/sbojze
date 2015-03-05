@@ -1,0 +1,9 @@
+
+
+
+"#viewMainPage": {
+	top: "44dip",
+	width: "100%",
+	bottom: 0,
+	backgroundColor:' Alloy.CFG.COLOR_VIEW_BG'
+}

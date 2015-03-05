@@ -133,7 +133,7 @@ module.exports.SwitchView = function(e)
 				ControllerManager.prevController = ControllerManager.currController;
 				ControllerManager.currController = nextController;		
 			};			
-			Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});		
+			//Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});		
 		} 	
 	}   	   	
 		
@@ -196,7 +196,7 @@ module.exports.RefreshView = function(extraParams)
 			nextController.destroy();
 		};
 		Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns(true);
-		Alloy.Globals.LoginManager.IsLogin({controllerView: ControllerManager.currController, callback: OnIsLoginReturn});		
+		//Alloy.Globals.LoginManager.IsLogin({controllerView: ControllerManager.currController, callback: OnIsLoginReturn});		
 	}			
 };
 
@@ -297,7 +297,7 @@ module.exports.AddView = function(viewPath, params)
 		Alloy.Globals.Debug("Array of controller = " + ControllerManager.arrayControllers.length);
 	};
 	
-	Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});
+	//Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});
 	
 };
 

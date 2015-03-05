@@ -118,58 +118,9 @@
 	path: Alloy.CFG.PATH_PPT_STANDARD,
 	viewID: "viewPPTStandard"
 }
-"#subMenuManageRT": {
-	path: Alloy.CFG.PATH_MANAGE_RT,
-	viewID: "viewManageRT"
-}
-"#subMenuWorkoutTracker": {
-	path: Alloy.CFG.PATH_WORKOUT_TRACKER,
-	viewID: "viewWorkoutTracker"   
-}
-"#subMenuCircuitTraining": {
-	path: Alloy.CFG.PATH_CIRCUIT_TRANINING,
-	viewID: "viewCircuitTraining"   
-}
-"#subMenuIPTWorkout": {
-	path: Alloy.CFG.PATH_IPT_WORKOUT,
-	viewID: "viewIPTWorkout"
-}
-"#subMenuRTWorkout": {
-	path: Alloy.CFG.PATH_RT_WORKOUT,
-	viewID: "viewRTWorkout"
-}
-"#subMenuIPPTInYourCommunity": {
-	path: Alloy.CFG.PATH_IPPT_IN_YOUR_COMMUNITY,
-	viewID: "viewIPPTInYourCommunity"
-}
-"#subMenuBodyMassIndexCalculator": {
-	path: Alloy.CFG.PATH_BODY_MASS_INDEX_CALCULATOR,
-	viewID: "viewBodyMassIndexCalculator"
-}
-"#subMenuWeatherForecast": {
-	path: Alloy.CFG.PATH_WEATHER_FORECAST,
-	viewID: "viewWeatherForecast"
-}
-"#subMenuUpdateContact": {
-	path: Alloy.CFG.PATH_UPDATE_CONTACT,
-	viewID: "viewUpdateContact"
-}
-
-"#subMenuMyProfile": {
-	path: Alloy.CFG.PATH_MY_PROFILE,
-	viewID: "viewMyProfile"
-}
-"#subMenuUserGuide": {
-	path: Alloy.CFG.PATH_USER_GUIDE,
-	viewID: "viewUserGuide"
-}
-"#subMenuFeedback": {
-	path: Alloy.CFG.PATH_FEEDBACK,
-	viewID: "viewFeedback"
-}
-"#subMenuContactUs": {
-	path: Alloy.CFG.PATH_CONTACT_US,
-	viewID: "viewContactUs"
+"#subMenuMainPage": {
+	path: Alloy.CFG.PATH_MAINPAGE ,
+	viewID: "viewMainPage"
 }
 
 // images for side menu icons

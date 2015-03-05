@@ -56,8 +56,8 @@
           <ImageView class="subMenuItemImage" id="subMenuImagePPTStandard"/>
           <!--ImageView id="sideMenuShadow" height="40dip"/-->
        </TableViewRow>
-       <TableViewRow class="subMenuItemClass" id="subMenuManageRT">
-          <Label id="subMenuItemTitle" text="Manage RT"/>
+       <TableViewRow class="subMenuItemClass" id="subMenuMainPage">
+          <Label id="subMenuItemTitle" text="Main Page"/>
           <ImageView class="subMenuItemImage" id="subMenuImageManageRT"/>
           <!--ImageView id="sideMenuShadow" height="40dip"/-->
        </TableViewRow>
