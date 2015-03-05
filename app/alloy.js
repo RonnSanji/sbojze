@@ -71,8 +71,14 @@ Alloy.CFG.ISDEBUG = true;
 // Alloy.CFG.PATH_IPPT_REVISED_SCOREBOARD = "menu/ippt/IPPTRevisedScoreboard/viewIPPTRevisedScoreboard";
 // Alloy.CFG.PATH_MANAGE_IPT          = "menu/ippt/ManageIPT/viewManageIPT";
 // Alloy.CFG.PATH_PPT_STANDARD        = "menu/ippt/PPTStandard/viewPPTStandard";
+   
    Alloy.CFG.PATH_MAINPAGE              = "menu/MainPage/viewMainPage";
    Alloy.CFG.PATH_PROFILE               = "menu/Profile/viewProfile";
+   Alloy.CFG.PATH_SEARCH               = "menu/Search/viewSearch";
+   Alloy.CFG.PATH_MANAGE               = "menu/Manage/viewManage";
+   Alloy.CFG.PATH_SETTINGS               = "menu/Settings/viewSettings";
+   Alloy.CFG.PATH_ENQUIRY               = "menu/Enquiry/viewEnquiry";
+   
 // Alloy.CFG.PATH_WORKOUT_TRACKER     = "menu/fitness/WorkoutTracker/viewWorkoutTracker";
  Alloy.CFG.PATH_CIRCUIT_TRANINING     = "menu/fitness/CircuitTraining/viewCircuitTraining";
 // Alloy.CFG.PATH_IPT_WORKOUT         = "menu/fitness/IPTWorkout/viewIPTWorkout";

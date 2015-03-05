@@ -111,17 +111,92 @@ var switchTab = function(name){
 		case "MainPage":
 			$.homeLine.backgroundColor = "#2E2F38";
 			$.profileLine.backgroundColor = "#454754";
+			$.searchLine.backgroundColor = "#454754";
+			$.manageLine.backgroundColor = "#454754";
+			$.settingsLine.backgroundColor = "#454754";
+			$.enquiryLine.backgroundColor = "#454754";
 			$.homeTitle.color = "#4BCFED";
 			$.profileTitle.color = "#FFFFFF";
+			$.searchTitle.color = "#FFFFFF";
+			$.manageTitle.color = "#FFFFFF";
+			$.settingsTitle.color = "#FFFFFF";
+			$.enquiryTitle.color = "#FFFFFF";
 		break;
 		
 		case "Profile":
 			$.homeLine.backgroundColor = "#454754";
 			$.profileLine.backgroundColor = "#2E2F38";
+			$.searchLine.backgroundColor = "#454754";
+			$.manageLine.backgroundColor = "#454754";
+			$.settingsLine.backgroundColor = "#454754";
+			$.enquiryLine.backgroundColor = "#454754";
 			$.homeTitle.color = "#FFFFFF";
 			$.profileTitle.color = "#4BCFED";
+			$.searchTitle.color = "#FFFFFF";
+			$.manageTitle.color = "#FFFFFF";
+			$.settingsTitle.color = "#FFFFFF";
+			$.enquiryTitle.color = "#FFFFFF";
 		break;
 		
+		case "Search":
+			$.homeLine.backgroundColor = "#454754";
+			$.profileLine.backgroundColor = "#454754";
+			$.searchLine.backgroundColor = "#2E2F38";
+			$.manageLine.backgroundColor = "#454754";
+			$.settingsLine.backgroundColor = "#454754";
+			$.enquiryLine.backgroundColor = "#454754";
+			$.homeTitle.color = "#FFFFFF";
+			$.profileTitle.color = "#FFFFFF";
+			$.searchTitle.color = "#4BCFED";
+			$.manageTitle.color = "#FFFFFF";
+			$.settingsTitle.color = "#FFFFFF";
+			$.enquiryTitle.color = "#FFFFFF";
+		break;
+		
+		case "Manage":
+			$.homeLine.backgroundColor = "#454754";
+			$.profileLine.backgroundColor = "#454754";
+			$.searchLine.backgroundColor = "#454754";
+			$.manageLine.backgroundColor = "#2E2F38";
+			$.settingsLine.backgroundColor = "#454754";
+			$.enquiryLine.backgroundColor = "#454754";
+			$.homeTitle.color = "#FFFFFF";
+			$.profileTitle.color = "#FFFFFF";
+			$.searchTitle.color = "#FFFFFF";
+			$.manageTitle.color = "#4BCFED";
+			$.settingsTitle.color = "#FFFFFF";
+			$.enquiryTitle.color = "#FFFFFF";
+		break;
+		
+		case "Settings":
+			$.homeLine.backgroundColor = "#454754";
+			$.profileLine.backgroundColor = "#454754";
+			$.searchLine.backgroundColor = "#454754";
+			$.manageLine.backgroundColor = "#454754";
+			$.settingsLine.backgroundColor = "#2E2F38";
+			$.enquiryLine.backgroundColor = "#454754";
+			$.homeTitle.color = "#FFFFFF";
+			$.profileTitle.color = "#FFFFFF";
+			$.searchTitle.color = "#FFFFFF";
+			$.manageTitle.color = "#FFFFFF";
+			$.settingsTitle.color = "#4BCFED";
+			$.enquiryTitle.color = "#FFFFFF";
+		break;
+		
+		case "Enquiry":
+			$.homeLine.backgroundColor = "#454754";
+			$.profileLine.backgroundColor = "#454754";
+			$.searchLine.backgroundColor = "#454754";
+			$.manageLine.backgroundColor = "#454754";
+			$.settingsLine.backgroundColor = "#454754";
+			$.enquiryLine.backgroundColor = "#2E2F38";
+			$.homeTitle.color = "#FFFFFF";
+			$.profileTitle.color = "#FFFFFF";
+			$.searchTitle.color = "#FFFFFF";
+			$.manageTitle.color = "#FFFFFF";
+			$.settingsTitle.color = "#FFFFFF";
+			$.enquiryTitle.color = "#4BCFED";
+		break;
 	}
 };
 
@@ -144,6 +219,38 @@ $.profileSelect.addEventListener("click",function(){
 	var path = Alloy.CFG.PATH_PROFILE;
 	var title = "Profile";
 	var viewID = "viewProfile";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
+
+$.searchSelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_SEARCH;
+	var title = "Search";
+	var viewID = "viewSearch";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
+
+$.manageSelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_MANAGE;
+	var title = "Manage";
+	var viewID = "viewManage";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
+
+$.settingsSelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_SETTINGS;
+	var title = "Settings";
+	var viewID = "viewSettings";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
+
+$.enquirySelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_ENQUIRY;
+	var title = "Enquiry";
+	var viewID = "viewEnquiry";
 	switchTab(title);
 	OnItemClick(path,title,viewID);
 });

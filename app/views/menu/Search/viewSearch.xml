@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="viewSearch">	
+		<Label id ="test">Search</Label>
+	</View>
+</Alloy>

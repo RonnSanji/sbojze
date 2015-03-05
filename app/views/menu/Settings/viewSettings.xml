@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="viewSettings">	
+		<Label id ="test">Settings</Label>
+	</View>
+</Alloy>
