@@ -892,44 +892,44 @@ module.exports.FetchMaintenanceNotice = function()
 		//var responseText = xmlString
 		
 		
-		var savedResponse = Alloy.Globals.ResourceMgr.Load({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE});
-		if(savedResponse)
-		{
-			if(responseText == savedResponse.text) 
-			{
-				Alloy.Globals.Debug("data is same");
-				
-				var obj         = savedResponse.obj;
-				var dteObjStart = Utils.ConvertFromMaintenanceDateToDate({date: obj.dteStart, time: obj.timeStart});
-				var dteObjEnd   = Utils.ConvertFromMaintenanceDateToDate({date: obj.dteEnd, time: obj.timeEnd});
-				var now         = new Date();
-				if((now > dteObjStart) && (now > dteObjEnd))
-				{
-					Alloy.Globals.Debug("Maintenance is over");
-					Alloy.CFG.FLAG_UNDER_MAINTENANCE = false;
-					return;
-				}
-				
-				var timeStamp = new Date(savedResponse.timeStamp);				
-				if(Utils.IsDatesEqual({dateA: now, dateB: timeStamp}))
-				{
-					Alloy.Globals.Debug("Had already shown");
-					return;
-				}
-								
-				var numDays = Utils.CalculateDaysBetweenDates({dateFrom: now, dateTo: dteObjStart});
-				Alloy.Globals.Debug("Num days = " + numDays);
-				if(numDays < 3)
-				{
-					Utils.PromptAlert({title: "Maintenance Notice", message: savedResponse.msg});	
-					if(numDays == 0) Alloy.CFG.FLAG_UNDER_MAINTENANCE = true;
-									
-				}
-				savedResponse.timeStamp = new Date();
-				Alloy.Globals.ResourceMgr.Save({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE, data: savedResponse});				
-				return;
-			}
-		}
+		//var savedResponse = Alloy.Globals.ResourceMgr.Load({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE});
+		// if(savedResponse)
+		// {
+			// if(responseText == savedResponse.text) 
+			// {
+				// Alloy.Globals.Debug("data is same");
+// 				
+				// var obj         = savedResponse.obj;
+				// var dteObjStart = Utils.ConvertFromMaintenanceDateToDate({date: obj.dteStart, time: obj.timeStart});
+				// var dteObjEnd   = Utils.ConvertFromMaintenanceDateToDate({date: obj.dteEnd, time: obj.timeEnd});
+				// var now         = new Date();
+				// if((now > dteObjStart) && (now > dteObjEnd))
+				// {
+					// Alloy.Globals.Debug("Maintenance is over");
+					// Alloy.CFG.FLAG_UNDER_MAINTENANCE = false;
+					// return;
+				// }
+// 				
+				// var timeStamp = new Date(savedResponse.timeStamp);				
+				// if(Utils.IsDatesEqual({dateA: now, dateB: timeStamp}))
+				// {
+					// Alloy.Globals.Debug("Had already shown");
+					// return;
+				// }
+// 								
+				// var numDays = Utils.CalculateDaysBetweenDates({dateFrom: now, dateTo: dteObjStart});
+				// Alloy.Globals.Debug("Num days = " + numDays);
+				// if(numDays < 3)
+				// {
+					// Utils.PromptAlert({title: "Maintenance Notice", message: savedResponse.msg});	
+					// if(numDays == 0) Alloy.CFG.FLAG_UNDER_MAINTENANCE = true;
+// 									
+				// }
+				// savedResponse.timeStamp = new Date();
+				// Alloy.Globals.ResourceMgr.Save({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE, data: savedResponse});				
+				// return;
+			// }
+		// }
 				
 		try
 		{
@@ -1000,11 +1000,11 @@ module.exports.CheckMaintenanceNotice = function()
 	var msg = null;
 	if(Alloy.CFG.FLAG_UNDER_MAINTENANCE == true)
 	{
-		var savedResponse = Alloy.Globals.ResourceMgr.Load({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE});
-		if(savedResponse)
-		{
-			msg = savedResponse.msg;			
-		}
+		//var savedResponse = Alloy.Globals.ResourceMgr.Load({title: Alloy.CFG.RESOURCE_MAINTENANCE_NOTICE});
+		// if(savedResponse)
+		// {
+			// msg = savedResponse.msg;			
+		// }
 	}
 	return msg;
 };

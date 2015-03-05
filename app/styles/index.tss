@@ -45,7 +45,7 @@
 	//left: "260dip",
 	width: "100%",
 	height: "100%",
-	backgroundImage: Alloy.CFG.IMG_DEFAULT_SPLASH
+	//backgroundImage: Alloy.CFG.IMG_DEFAULT_SPLASH
 }
 
 ".viewProtector": {

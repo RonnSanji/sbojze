@@ -79,18 +79,30 @@ module.exports.SwitchView = function(e)
    	var nextView       = null;  	
    	
    	Alloy.CFG.REF_WIN.SetViewProtector(true);
+   	Ti.API.info("******path: ",viewPath);
+   	Ti.API.info("******title: ",viewTitle);
+	Ti.API.info("******id: ",viewID);
+
+
    	
-   	if((viewID == ControllerManager.currController.getView().id) && Alloy.Globals.WebServiceManager.HasError())
-   	{
-   		ControllerManager.RefreshView();
-   	}
+   	
+   	// if((viewID == ControllerManager.currController.getView().id) && Alloy.Globals.WebServiceManager.HasError())
+   	// {
+   		// ControllerManager.RefreshView();
+   	// }
    	// only change view if different id
-   	else if(viewID != ControllerManager.currController.getView().id)
+   	
+   	if(viewID != ControllerManager.currController.getView().id)
 	{
+	Ti.API.info("******controller id: ",ControllerManager.currController.getView().id);
+
+		
 		// use default if error creating controller
 	   	try
 	   	{
 	   		nextController = Alloy.createController(viewPath);
+	   		Ti.API.info("******new ncontroller id: ",nextController.getView().id);
+
 	   		nextView = nextController.getView();
 	   	}
 	   	catch(err)
@@ -108,31 +120,31 @@ module.exports.SwitchView = function(e)
 			Alloy.CFG.REF_NAVIGATION_BAR.getView("title").text = viewTitle;
 			
 			// on islogin return
-			var OnIsLoginReturn = function(e)
-			{
-				ControllerManager.baseView.add(nextView);
-				if(e == true && nextController.OnEnter)
-				{
-					nextController.OnEnter();	
-					if(nextController.OnFirstLoad) nextController.OnFirstLoad();
-					nextController.hasEntered = true;  
-				}				
-				
-				if(ControllerManager.currController != null) 
+			// var OnIsLoginReturn = function(e)
+			// {
+				 ControllerManager.baseView.add(nextView);
+				// if(e == true && nextController.OnEnter)
+				// {
+					// nextController.OnEnter();	
+					// if(nextController.OnFirstLoad) nextController.OnFirstLoad();
+					// nextController.hasEntered = true;  
+				// }				
+// 				
+				 if(ControllerManager.currController != null) 
 				{
 					ControllerManager.baseView.remove(ControllerManager.currController.getView());	
 					if(ControllerManager.currController.OnExit && ControllerManager.currController.hasEntered) 
 					{
 						ControllerManager.currController.OnExit();
 					}
-					Alloy.Globals.LoginManager.DestroyLoginView(ControllerManager.currController);
+					//Alloy.Globals.LoginManager.DestroyLoginView(ControllerManager.currController);
 					if(ControllerManager.currController.OnDestroy) ControllerManager.currController.OnDestroy();
 					ControllerManager.currController.destroy();
 					ControllerManager.currController = null;
 				}				
 				ControllerManager.prevController = ControllerManager.currController;
 				ControllerManager.currController = nextController;		
-			};			
+			// };			
 			//Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});		
 		} 	
 	}   	   	

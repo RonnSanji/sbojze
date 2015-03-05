@@ -13,7 +13,7 @@
 var Alloy = require("alloy"), _ = require("alloy/underscore")._, Backbone = require("alloy/backbone");
 
  Alloy.Globals.Utils             = require("Utils");
-// Alloy.Globals.ActivityIndicator = require("ActivityIndicator");
+ Alloy.Globals.ActivityIndicator = require("ActivityIndicator");
  Alloy.Globals.AlertMsg          = require("AlertMsg");
  Alloy.Globals.Debug               = require("Debug");
 // Alloy.Globals.ErrorLog          = require("ErrorLog");
@@ -31,7 +31,7 @@ var Alloy = require("alloy"), _ = require("alloy/underscore")._, Backbone = requ
 // Alloy.Globals.LoginManager      = require("managers/LoginManager");
 // Alloy.Globals.WebServiceManager = require("managers/WebServiceManager");
 // Alloy.Globals.CalendarManager   = require("managers/CalendarManager");
-// Alloy.Globals.AppBehaviourManager   = require("managers/AppBehaviourManager");
+Alloy.Globals.AppBehaviourManager   = require("managers/AppBehaviourManager");
 // Alloy.Globals.ProfileManager        = require("managers/ProfileManager");
 // Alloy.Globals.WorkoutTrackerManager = require("managers/WorkoutTrackerManager");
 
@@ -73,7 +73,7 @@ Alloy.CFG.ISDEBUG = true;
 // Alloy.CFG.PATH_PPT_STANDARD        = "menu/ippt/PPTStandard/viewPPTStandard";
    Alloy.CFG.PATH_MAINPAGE              = "menu/MainPage/viewMainPage";
 // Alloy.CFG.PATH_WORKOUT_TRACKER     = "menu/fitness/WorkoutTracker/viewWorkoutTracker";
-// Alloy.CFG.PATH_CIRCUIT_TRANINING     = "menu/fitness/CircuitTraining/viewCircuitTraining";
+ Alloy.CFG.PATH_CIRCUIT_TRANINING     = "menu/fitness/CircuitTraining/viewCircuitTraining";
 // Alloy.CFG.PATH_IPT_WORKOUT         = "menu/fitness/IPTWorkout/viewIPTWorkout";
 // Alloy.CFG.PATH_RT_WORKOUT          = "menu/fitness/RTWorkout/viewRTWorkout";
 // Alloy.CFG.PATH_IPPT_IN_YOUR_COMMUNITY     = "menu/fitness/IPPTInYourCommunity/viewIPPTInYourCommunity";

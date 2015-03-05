@@ -123,6 +123,7 @@
 	viewID: "viewMainPage"
 }
 
+
 // images for side menu icons
 "#subMenuImageManageIPPT": {
 	image: Alloy.CFG.IMG_SIDEMENU_ICON_MANAGE_IPPT
@@ -145,39 +146,4 @@
 "#subMenuImageManageRT": {
 	image: Alloy.CFG.IMG_SIDEMENU_ICON_MANAGE_RT
 }
-"#subMenuImageWorkoutTracker": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_WORKOUT_TRACKER
-}
-"#subMenuImageCircuitTraining": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_CIRCUIT_TRAINING
-}
-"#subMenuImageIPTWorkout": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPT_WORKOUT
-}
-"#subMenuImageRTWorkout": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_RT_WORKOUT
-}
-"#subMenuImageIPPTInYourCommunity": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_IPPT_IN_YOUR_COMMUNITY
-}
-"#subMenuImageBodyMassIndexCalculator": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_BODY_MASS_INDEX_CALCULATOR
-}
-"#subMenuImageWeatherForecast": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_WEATHER_FORECAST
-}
-"#subMenuImageUpdateContact": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_UPDATE_CONTACT
-}
-"#subMenuImageMyProfile": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_MY_PROFILE
-}
-"#subMenuImageUserGuide": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_USER_GUIDE
-}
-"#subMenuImageFeedback": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_FEEDBACK
-}
-"#subMenuImageContactUs": {
-	image: Alloy.CFG.IMG_SIDEMENU_ICON_CONTACT_US
-}
+

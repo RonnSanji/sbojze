@@ -131,11 +131,9 @@ var Init = function()
 	// initialise 
 	//Alloy.Globals.ProfileManager.Init();
 	//Alloy.Globals.AppBehaviourManager.Init(Alloy.CFG.REF_WIN);
-	//Alloy.Globals.ActivityIndicator.Init(Alloy.CFG.REF_WIN);
+	Alloy.Globals.ActivityIndicator.Init(Alloy.CFG.REF_WIN);
 	Alloy.Globals.ControllerManager.Init(Alloy.CFG.REF_VIEW_BASE, Alloy.createController("menu/viewSplash"));
 	//Alloy.Globals.LoginManager.Init();
-	//Alloy.Globals.WorkoutTrackerManager.Init();
-	//Alloy.Globals.BackgroundNotificationManager.Init();
 	
 	//Enable push notification uncomment below
 	//RegisterPushNotification();
@@ -148,7 +146,7 @@ var Init = function()
 	
 	
 	
-	//if(OS_IOS) behaviour can be removed 
+	//if(OS_IOS) 
 		//Alloy.Globals.AppBehaviourManager.RegisterListener({type: Alloy.CFG.APP_OPEN, callback: OnSetFlurryAnalytic});
 	//else
 		//Alloy.Globals.AppBehaviourManager.RegisterListener({type: Alloy.CFG.ACTIVITY_STOP, callback: OnSetFlurryAnalytic});
@@ -185,9 +183,9 @@ var Clean = function()
 	//Alloy.Globals.AppBehaviourManager.UnRegisterListener({type: Alloy.CFG.APP_RESUMED, callback: OnFetchMaintenanceNotice});
 	
 	//if(OS_IOS)
-	//	Alloy.Globals.AppBehaviourManager.UnRegisterListener({type: Alloy.CFG.APP_OPEN, callback: OnSetFlurryAnalytic});
+		//Alloy.Globals.AppBehaviourManager.UnRegisterListener({type: Alloy.CFG.APP_OPEN, callback: OnSetFlurryAnalytic});
 	//else
-	//	Alloy.Globals.AppBehaviourManager.UnRegisterListener({type: Alloy.CFG.ACTIVITY_STOP, callback: OnSetFlurryAnalytic});
+		//Alloy.Globals.AppBehaviourManager.UnRegisterListener({type: Alloy.CFG.ACTIVITY_STOP, callback: OnSetFlurryAnalytic});
 	/*
 	if(OS_ANDROID)
 	{
