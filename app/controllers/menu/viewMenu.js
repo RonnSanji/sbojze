@@ -16,7 +16,80 @@
 // HANDLERS
 //===========================================================================	
 // on menu item click
-var OnItemClick = function(e) 
+var statusBarheight;
+if(Ti.Platform.osname == 'android'){
+	statusBarheight = 25;
+}else{
+	statusBarheight = 20;
+}
+$.viewMenu.top = statusBarheight;
+
+var dp_width_rate;
+if(Ti.Platform.osname == 'android')
+{
+	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
+}
+else{
+	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
+}
+
+$.photo.width = dp_width_rate*100;
+$.photo.height = dp_width_rate*100;
+$.menuTitle.font = {
+	fontSize: 40*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.homeIcon.width = dp_width_rate*70;
+$.homeIcon.height = dp_width_rate*70;
+$.homeTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.profileIcon.width = dp_width_rate*70;
+$.profileIcon.height = dp_width_rate*70;
+$.profileTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.searchIcon.width = dp_width_rate*70;
+$.searchIcon.height = dp_width_rate*70;
+$.searchTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.manageIcon.width = dp_width_rate*70;
+$.manageIcon.height = dp_width_rate*70;
+$.manageTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.settingsIcon.width = dp_width_rate*70;
+$.settingsIcon.height = dp_width_rate*70;
+$.settingsTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.enquiryIcon.width = dp_width_rate*70;
+$.enquiryIcon.height = dp_width_rate*70;
+$.enquiryTitle.font = {
+	fontSize: 36*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+$.logoutIcon.width = dp_width_rate*50;
+$.logoutIcon.height = dp_width_rate*50;
+$.logoutTitle.font = {
+	fontSize: 28*dp_width_rate,
+	fontWeight: 'bold',
+};
+
+var OnItemClick = function(path,title,viewID) 
 {  	
 
 	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0)
@@ -25,13 +98,55 @@ var OnItemClick = function(e)
 		{
 			Alloy.Globals.ControllerManager.isRunning = true;
 			Alloy.Globals.ControllerManager.SwitchView({
-				path: e.row.path, 
-				title: e.row.children[0].text,
-				id: e.row.viewID
+				path: path, 
+				title: title,
+				id: viewID,
 			});
 		}		
     }
 };
+
+var switchTab = function(name){
+	switch(name){
+		case "MainPage":
+			$.homeLine.backgroundColor = "#2E2F38";
+			$.profileLine.backgroundColor = "#454754";
+			$.homeTitle.color = "#4BCFED";
+			$.profileTitle.color = "#FFFFFF";
+		break;
+		
+		case "Profile":
+			$.homeLine.backgroundColor = "#454754";
+			$.profileLine.backgroundColor = "#2E2F38";
+			$.homeTitle.color = "#FFFFFF";
+			$.profileTitle.color = "#4BCFED";
+		break;
+		
+	}
+};
+
+var init = function(){
+	$.homeLine.backgroundColor = "#2E2F38";
+	$.homeTitle.color = "#4BCFED";
+};
+
+init();
+
+$.homeSelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_MAINPAGE;
+	var title = "MainPage";
+	var viewID = "viewMainPage";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
+
+$.profileSelect.addEventListener("click",function(){
+	var path = Alloy.CFG.PATH_PROFILE;
+	var title = "Profile";
+	var viewID = "viewProfile";
+	switchTab(title);
+	OnItemClick(path,title,viewID);
+});
 //===========================================================================
 // END OF HANDLERS
 //===========================================================================	

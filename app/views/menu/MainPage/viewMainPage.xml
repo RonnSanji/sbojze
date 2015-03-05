@@ -1,6 +1,5 @@
 <Alloy>
-	<View id="viewMainPage">
-		
-		<Label id ="test">test test </Label>
+	<View id="viewMainPage">	
+		<Label id ="test">MainPage</Label>
 	</View>
 </Alloy>

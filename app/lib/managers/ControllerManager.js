@@ -107,7 +107,7 @@ module.exports.SwitchView = function(e)
 	   	}
 	   	catch(err)
 	   	{
-	   		Alloy.Globals.ErrorLog({type: Alloy.Globals.ErrorLog.CHANGE_VIEW_ERROR, desc: JSON.stringify(err)});
+	   		// Alloy.Globals.ErrorLog({type: Alloy.Globals.ErrorLog.CHANGE_VIEW_ERROR, desc: JSON.stringify(err)});
 	   		nextController =  ControllerManager.defaultController;
 	   		nextView = ControllerManager.defaultController.getView();
 	   	}
