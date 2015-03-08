@@ -10,6 +10,15 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+var screen_width;
+if(Ti.Platform.osname == 'android')
+{
+	screen_width = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor;
+}
+else{
+	screen_width = Titanium.Platform.displayCaps.platformWidth;
+}
+
 var Alloy = require("alloy"), _ = require("alloy/underscore")._, Backbone = require("alloy/backbone");
 
  Alloy.Globals.Utils             = require("Utils");
@@ -321,7 +330,8 @@ Alloy.CFG.COLOR_VIEW_HIGHLIGHT_BG = "#EDEFD9";
 
 // properties
 Alloy.CFG.BASEVIEW_ANINMATE_SPEED     = 300;
-Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = 260; //+ "dip"
+// Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = 260; //+ "dip"
+Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = screen_width*0.67;
 Alloy.CFG.ONE_THIRD_PERCENTAGE        = (100 / 3) + "%";
 Alloy.CFG.TWO_THIRD_PERCENTAGE        = ((100 / 3) * 2) + "%";
 Alloy.CFG.VIEW_LOGIN_SCROLLABLE       = (Ti.Platform.Android && Ti.Platform.displayCaps.platformHeight < 500) ? true : false;

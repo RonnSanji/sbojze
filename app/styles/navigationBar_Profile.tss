@@ -1,4 +1,37 @@
+"#navigator":{
+	top:0,
+	height:"100%",
+	backgroundColor:"#4BCFED",
+}
 
-".container" : {
-  
+"#leftView":{
+	left:0,
+	width:"15%",
+	height:"100%",
+}
+
+"#middleView":{
+	left:0,
+	width:"70%",
+	height:"100%",
+}
+
+"#rightView":{
+	left:0,
+	width:"15%",
+	height:"100%",
+}
+
+"#menuBtn":{
+	image:"/images/list.png",
+}
+
+"#title":{
+	color:"#FFFFFF",
+	text:"PROFILE",
+	textAlign:"center",
+}
+
+"#editBtn":{
+	image:"/images/job5.png",
 }
