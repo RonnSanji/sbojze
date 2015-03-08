@@ -15,10 +15,10 @@
 
 <Alloy>
    <View id="viewNavigatorBar">
-       <Label id="title"/>
+       <!-- <Label id="title"/>
        <Label id="labelVersion"/>
        <Button id="btnMenu" onClick="OnBtnMenuClick"></Button>
        <Button id="btnAction" onClick ="OnBtnActionClick"></Button>  
-       <Button id="btnBack" onClick="OnBtnBackClick"></Button>       
+       <Button id="btnBack" onClick="OnBtnBackClick"></Button>   -->     
    </View>
 </Alloy>

@@ -16,13 +16,6 @@
 // HANDLERS
 //===========================================================================	
 // on menu item click
-var statusBarheight;
-if(Ti.Platform.osname == 'android'){
-	statusBarheight = 25;
-}else{
-	statusBarheight = 20;
-}
-$.viewMenu.top = statusBarheight;
 
 var dp_width_rate;
 if(Ti.Platform.osname == 'android')
@@ -213,6 +206,7 @@ $.homeSelect.addEventListener("click",function(){
 	var viewID = "viewMainPage";
 	switchTab(title);
 	OnItemClick(path,title,viewID);
+	Ti.App.fireEvent("switch_mainPage",{});
 });
 
 $.profileSelect.addEventListener("click",function(){
@@ -221,6 +215,7 @@ $.profileSelect.addEventListener("click",function(){
 	var viewID = "viewProfile";
 	switchTab(title);
 	OnItemClick(path,title,viewID);
+	Ti.App.fireEvent("switch_profile",{});
 });
 
 $.searchSelect.addEventListener("click",function(){

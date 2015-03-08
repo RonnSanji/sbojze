@@ -82,10 +82,6 @@ module.exports.SwitchView = function(e)
    	Ti.API.info("******path: ",viewPath);
    	Ti.API.info("******title: ",viewTitle);
 	Ti.API.info("******id: ",viewID);
-
-
-   	
-   	
    	// if((viewID == ControllerManager.currController.getView().id) && Alloy.Globals.WebServiceManager.HasError())
    	// {
    		// ControllerManager.RefreshView();
@@ -94,15 +90,12 @@ module.exports.SwitchView = function(e)
    	
    	if(viewID != ControllerManager.currController.getView().id)
 	{
-	Ti.API.info("******controller id: ",ControllerManager.currController.getView().id);
-
-		
+	Ti.API.info("******controller id: ",ControllerManager.currController.getView().id);	
 		// use default if error creating controller
 	   	try
 	   	{
 	   		nextController = Alloy.createController(viewPath);
 	   		Ti.API.info("******new ncontroller id: ",nextController.getView().id);
-
 	   		nextView = nextController.getView();
 	   	}
 	   	catch(err)
@@ -117,7 +110,7 @@ module.exports.SwitchView = function(e)
 		if(nextController)
 		{
 			// show title
-			Alloy.CFG.REF_NAVIGATION_BAR.getView("title").text = viewTitle;
+			// Alloy.CFG.REF_NAVIGATION_BAR.getView("title").text = viewTitle;
 			
 			// on islogin return
 			// var OnIsLoginReturn = function(e)
@@ -150,8 +143,10 @@ module.exports.SwitchView = function(e)
 	}   	   	
 		
 	// animate view	
-	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0)
-		Alloy.CFG.REF_NAVIGATION_BAR.getView("btnMenu").fireEvent("click");
+	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0){
+		Ti.App.fireEvent('showMenu',{});
+	}
+		// Alloy.CFG.REF_NAVIGATION_BAR.getView("btnMenu").fireEvent("click");
 	else
 	{
 		Alloy.CFG.REF_WIN.SetViewProtector(false);

@@ -119,10 +119,10 @@ var HideAllBtns = function(exceptMenu)
 {
 	Alloy.Globals.Debug("Hide all btns");
 	//$.btnAction.visible = false
-	$.btnAction.hide();
-	$.btnBack.visible   = false;
-	if(!exceptMenu)
-		$.btnMenu.visible = false;
+	// $.btnAction.hide();
+	// $.btnBack.visible   = false;
+	// if(!exceptMenu)
+		// $.btnMenu.visible = false;
 };
 //===========================================================================
 // END OF FUNCTIONS
@@ -136,10 +136,10 @@ $.HideAllBtns = HideAllBtns;
 // for android. to check if the process is still running
 $.isRunning = false;
 
-if(Alloy.CFG.APPLICATION_BUILD == Alloy.CFG.BUILD.DEVELOPMENT)
-{
-	$.labelVersion.text = ((OS_ANDROID) ? "Android " : "iOS ") + Alloy.CFG.VERSION_NUM_DEVELOPMENT + "." + Alloy.CFG.SERVER_TYPE;
-}
+// if(Alloy.CFG.APPLICATION_BUILD == Alloy.CFG.BUILD.DEVELOPMENT)
+// {
+	// $.labelVersion.text = ((OS_ANDROID) ? "Android " : "iOS ") + Alloy.CFG.VERSION_NUM_DEVELOPMENT + "." + Alloy.CFG.SERVER_TYPE;
+// }
 
 //$.labelVersion.text = ((OS_ANDROID) ? "Android " : "iOS ") + Alloy.CFG.VERSION_NUM_DEVELOPMENT + "." + Alloy.CFG.SERVER_TYPE
 						
@@ -226,3 +226,19 @@ exports.UnRegisterListener = function(e)
 //===========================================================================
 // END OF EXPORTS
 //===========================================================================
+
+Ti.App.addEventListener('showMenu',OnBtnMenuClick);
+
+Ti.App.addEventListener('switch_mainPage',function(){
+	$.viewNavigatorBar.removeAllChildren();
+	var navigator = Alloy.createController("navigationBar_mainPage").getView('navigator');
+	$.viewNavigatorBar.add(navigator);
+});
+
+Ti.App.addEventListener('switch_profile',function(){
+	$.viewNavigatorBar.removeAllChildren();
+	var navigator = Alloy.createController("navigationBar_profile").getView('navigator');
+	$.viewNavigatorBar.add(navigator);
+});
+
+

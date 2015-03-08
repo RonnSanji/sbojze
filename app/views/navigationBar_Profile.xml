@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="navigator" layout="horizontal">
+		<Button id="button1" title="menu_Profile"/>
+	</View>
+</Alloy>

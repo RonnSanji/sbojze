@@ -16,16 +16,18 @@
 -->
 
 <Alloy>
-    <Window class="win" backgroundColor="white" onAndroidback="OnAndroidBack">
+    <Window class="win" backgroundColor="#4BCFED" onAndroidback="OnAndroidBack">
         <!--> menu table -->
-        <Require id="viewMenu" src="menu/viewMenu" type="view"/>
-        <!--> base view -->
-        <!--View id="viewBase" onSwipe="OnSwipe" onTouchstart="OnTouchStart" onTouchend="OnTouchEnd" onTouchmove="OnTouchMove"-->
-        <View id="viewBase">
-            <Require id="navigationBar" src="navigationBar"/>
-            <ImageView id="logoSAF"/>   
-            <View class="viewProtector" id="viewProtectorPage"/>              
-        </View>    
-   		<View class="viewProtector" id="viewProtectorWin" top="0"/>             
+      	<View id="background">
+	        <Require id="viewMenu" src="menu/viewMenu" type="view"/>
+	        <!--> base view -->
+	        <!--View id="viewBase" onSwipe="OnSwipe" onTouchstart="OnTouchStart" onTouchend="OnTouchEnd" onTouchmove="OnTouchMove"-->
+	        <View id="viewBase">
+	            <Require id="navigationBar" src="navigationBar"/>
+	            <ImageView id="logoSAF"/>   
+	            <View class="viewProtector" id="viewProtectorPage"/>              
+	        </View>    
+	   		<View class="viewProtector" id="viewProtectorWin" top="0"/>       
+   		</View>      
     </Window>    
 </Alloy>

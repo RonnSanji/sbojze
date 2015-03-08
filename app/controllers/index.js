@@ -22,6 +22,14 @@ Alloy.CFG.REF_NAVIGATION_BAR  = $.navigationBar;
 // END OF PROPERTIES
 //===========================================================================	
 
+var statusBarheight;
+if(Ti.Platform.osname == 'android'){
+	statusBarheight = 25;
+}else{
+	statusBarheight = 20;
+}
+$.background.top = statusBarheight;
+
 
 //===========================================================================
 // HANDLERS
@@ -29,6 +37,7 @@ Alloy.CFG.REF_NAVIGATION_BAR  = $.navigationBar;
 // handler for android back button
 var OnAndroidBack = function(e)
 {	
+	/*
 	Alloy.Globals.Debug("NavigationBar isRunning = " + $.navigationBar.isRunning);
 	if($.navigationBar.isRunning || Alloy.Globals.ActivityIndicator.IsRunning()) return;
 	
@@ -60,7 +69,7 @@ var OnAndroidBack = function(e)
 				callbacks:[IsYes, IsNo]
 			});
 		}
-	}	
+	}*/
 };
 
 // on navigation menu open
@@ -165,8 +174,10 @@ var Init = function()
 // slide open menu when launch
 var AutoSlideAtLaunch = function()
 {
-	if(Alloy.CFG.REF_VIEW_BASE.rect.x == 0 && !Alloy.CFG.FLAG_MENU_TOUCHED)
-		$.navigationBar.getView("btnMenu").fireEvent("click");
+	if(Alloy.CFG.REF_VIEW_BASE.rect.x == 0 && !Alloy.CFG.FLAG_MENU_TOUCHED){
+		Ti.App.fireEvent('showMenu',{});
+		// $.navigationBar.getView("btnMenu").fireEvent("click");
+	}
 };
 
 // clean up

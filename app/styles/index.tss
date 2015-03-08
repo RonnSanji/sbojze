@@ -23,6 +23,10 @@
  * 
  * 
  */
+"#background":{
+	backgroundColor:"#FFFFFF",
+}
+
 
 ".win[platform=android]": {
 	navBarHidden: true,

@@ -91,7 +91,7 @@ var UpdatePSI = function()
 //UpdatePSI();
 
 Alloy.Globals.Debug($.getView().id + " created");
-Alloy.CFG.REF_NAVIGATION_BAR.getView("btnAction").visible = false;
+// Alloy.CFG.REF_NAVIGATION_BAR.getView("btnAction").visible = false;
 //===========================================================================
 // END OF LOGICS
 //===========================================================================	
