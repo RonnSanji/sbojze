@@ -82,27 +82,27 @@
 }
 
 "#homeIcon":{
-	image:"/images/house158.png",
+	image:"/images/menu_home_selected.png",
 }
 
 "#profileIcon":{
-	image:"/images/servant.png",
+	image:"/images/menu_profile.png",
 }
 
 "#searchIcon":{
-	image:"/images/online32.png",
+	image:"/images/menu_search.png",
 }
 
 "#manageIcon":{
-	image:"/images/calendar166.png",
+	image:"/images/menu_mgmt.png",
 }
 
 "#settingsIcon":{
-	image:"/images/setting5.png",
+	image:"/images/menu_settings.png",
 }
 
 "#enquiryIcon":{
-	image:"/images/email109.png",
+	image:"/images/menu_enquiry.png",
 }
 
 "#homeTitle":{

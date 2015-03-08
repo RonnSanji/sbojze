@@ -1,5 +1,5 @@
 <Alloy>
 	<View id="viewMainPage">	
-		<Label id ="test">MainPage</Label>
+		<ScrollView id="body" layout="vertical" scrollType="vertical"/>
 	</View>
 </Alloy>

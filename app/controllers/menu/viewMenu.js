@@ -114,6 +114,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#FFFFFF";
 			$.settingsTitle.color = "#FFFFFF";
 			$.enquiryTitle.color = "#FFFFFF";
+			
+			$.homeIcon.image = "/images/menu_home_selected.png";
+			$.profileIcon.image = "/images/menu_profile.png";
+			$.searchIcon.image = "/images/menu_search.png";
+			$.manageIcon.image = "/images/menu_mgmt.png";
+			$.settingsIcon.image = "/images/menu_settings.png";
+			$.enquiryIcon.image = "/images/menu_enquiry.png";
 		break;
 		
 		case "Profile":
@@ -129,6 +136,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#FFFFFF";
 			$.settingsTitle.color = "#FFFFFF";
 			$.enquiryTitle.color = "#FFFFFF";
+			
+			$.homeIcon.image = "/images/menu_home.png";
+			$.profileIcon.image = "/images/menu_profile_selected.png";
+			$.searchIcon.image = "/images/menu_search.png";
+			$.manageIcon.image = "/images/menu_mgmt.png";
+			$.settingsIcon.image = "/images/menu_settings.png";
+			$.enquiryIcon.image = "/images/menu_enquiry.png";
 		break;
 		
 		case "Search":
@@ -144,6 +158,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#FFFFFF";
 			$.settingsTitle.color = "#FFFFFF";
 			$.enquiryTitle.color = "#FFFFFF";
+			
+			$.homeIcon.image = "/images/menu_home.png";
+			$.profileIcon.image = "/images/menu_profile.png";
+			$.searchIcon.image = "/images/menu_search_selected.png";
+			$.manageIcon.image = "/images/menu_mgmt.png";
+			$.settingsIcon.image = "/images/menu_settings.png";
+			$.enquiryIcon.image = "/images/menu_enquiry.png";
 		break;
 		
 		case "Manage":
@@ -159,6 +180,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#4BCFED";
 			$.settingsTitle.color = "#FFFFFF";
 			$.enquiryTitle.color = "#FFFFFF";
+			
+			$.homeIcon.image = "/images/menu_home.png";
+			$.profileIcon.image = "/images/menu_profile.png";
+			$.searchIcon.image = "/images/menu_search.png";
+			$.manageIcon.image = "/images/menu_mgmt_selected.png";
+			$.settingsIcon.image = "/images/menu_settings.png";
+			$.enquiryIcon.image = "/images/menu_enquiry.png";
 		break;
 		
 		case "Settings":
@@ -174,6 +202,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#FFFFFF";
 			$.settingsTitle.color = "#4BCFED";
 			$.enquiryTitle.color = "#FFFFFF";
+			
+			$.homeIcon.image = "/images/menu_home.png";
+			$.profileIcon.image = "/images/menu_profile.png";
+			$.searchIcon.image = "/images/menu_search.png";
+			$.manageIcon.image = "/images/menu_mgmt.png";
+			$.settingsIcon.image = "/images/menu_settings_selected.png";
+			$.enquiryIcon.image = "/images/menu_enquiry.png";
 		break;
 		
 		case "Enquiry":
@@ -189,6 +224,13 @@ var switchTab = function(name){
 			$.manageTitle.color = "#FFFFFF";
 			$.settingsTitle.color = "#FFFFFF";
 			$.enquiryTitle.color = "#4BCFED";
+			
+			$.homeIcon.image = "/images/menu_home.png";
+			$.profileIcon.image = "/images/menu_profile.png";
+			$.searchIcon.image = "/images/menu_search.png";
+			$.manageIcon.image = "/images/menu_mgmt.png";
+			$.settingsIcon.image = "/images/menu_settings.png";
+			$.enquiryIcon.image = "/images/menu_enquiry_selected.png";
 		break;
 	}
 };

@@ -1,11 +1,6 @@
-
 "#viewMainPage": {
-	top: "44dip",
+	top: "7%",
 	width: "100%",
 	bottom: 0,
 	backgroundColor:'#FFFFFF'
-}
-
-"#test":{
-	
 }
