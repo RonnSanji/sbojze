@@ -1,0 +1,37 @@
+"#navigator":{
+	top:0,
+	height:"100%",
+	backgroundColor:"#4BCFED",
+}
+
+"#leftView":{
+	left:0,
+	width:"15%",
+	height:"100%",
+}
+
+"#middleView":{
+	left:0,
+	width:"70%",
+	height:"100%",
+}
+
+"#rightView":{
+	left:0,
+	width:"15%",
+	height:"100%",
+}
+
+"#backBtn":{
+	image:"/images/left arrow5.png",
+}
+
+"#title":{
+	text:"PANPACIFIC",
+	textAlign:"center",
+	color:"#FFFFFF",
+}
+
+"#favouriteBtn":{
+	image:"/images/favourite24.png",
+}

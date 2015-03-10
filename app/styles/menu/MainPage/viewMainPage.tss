@@ -1,5 +1,5 @@
 "#viewMainPage": {
-	top: "7%",
+	// top: "7%",
 	width: "100%",
 	bottom: 0,
 	backgroundColor:'#FFFFFF'

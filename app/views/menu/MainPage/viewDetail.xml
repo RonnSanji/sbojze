@@ -1,0 +1,57 @@
+<Alloy>
+	<View id="viewDetail">
+		<View id="content" layout="vertical">
+			<View id="photoView">
+				<ImageView id="photo"/>
+			</View>
+			<View id="addressView" layout="horizontal">
+				<View id="addressViewLeft" layout="vertical">
+					<View id="addressTitleView">
+						<Label id="addressTitle"/>
+					</View>
+					<View id="addressInfoView" layout="horizontal">
+						<ImageView id="addressInfoImage"/>
+						<Label id="addressInfoText"/>
+					</View>
+					<View id="addressPhoneView" layout="horizontal">
+						<ImageView id="addressPhoneImage"/>
+						<Label id="addressPhoneText"/>
+					</View>
+				</View>
+				<View id="addressViewRight"/>
+			</View>
+			
+			<View id="durationView" layout="horizontal">
+				<View id="durationViewLeft" layout="vertical">
+					<Label id="StartTimeTitle"/>
+					<Label id="DurationTitle"/>
+					<Label id="AttireTitle"/>
+				</View>
+				<View id="durationViewRight" layout="vertical">
+					<Label id="StartTimeContent"/>
+					<Label id="DurationContent"/>
+					<Label id="AttireContent"/>
+				</View>
+			</View>
+			
+			<View id="statusView" layout="horizontal">
+				<View id="vacancyView" layout="vertical">
+					<View id="vacancyLineOne" layout="horizontal">
+						<Label id="vacancyCurrent"/>
+						<Label id="vacancyMax"/>
+					</View>
+					<Label id="vacancyTitle"/>
+				</View>
+				<View id="dateView" layout="vertical">
+					<ImageView id="dateImage"/>
+					<Label id="dateText"/>
+				</View>
+			</View>
+			
+			<View id="applyView">
+				<Label id="applyText"/>
+			</View>
+			
+		</View>
+	</View>
+</Alloy>

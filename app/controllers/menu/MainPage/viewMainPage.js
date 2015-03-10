@@ -182,6 +182,9 @@ function addPosition(position){
 	layer.add(middleView);
 	layer.add(rightView);
 	
+	layer.addEventListener('click',function(){
+		Alloy.Globals.ControllerManager.AddView(Alloy.CFG.PATH_DETAIL,Alloy.CFG.NAVPATH_DETAIL,{position:position});
+	});
 	// $.body.add(layer);
 	return layer;
 }

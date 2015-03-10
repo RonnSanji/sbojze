@@ -31,6 +31,15 @@ module.exports.prevController    = null;
 module.exports.currController    = null;
 module.exports.arrayControllers  = [];
 module.exports.isRunning         = false;
+//add by me
+
+module.exports.baseNavigator     = null;
+module.exports.baseContent       = null;
+module.exports.defaultNavigator  = null;
+module.exports.prevNavigator     = null;
+module.exports.currNavigator     = null;
+module.exports.arrayNavigators   = [];
+
 //===========================================================================
 // END OF MODULE DECLARACTION
 //===========================================================================
@@ -55,38 +64,41 @@ var OnNavBaseAnimateEnd = function(e)
 // EXPORTS
 //===========================================================================	
 // initialise
-module.exports.Init = function(baseView, controller)
+module.exports.Init = function(baseView, baseNavigator, baseContent, controller, navigatorController)
 {	
 	ControllerManager.baseView  = baseView;
+	ControllerManager.baseNavigator = baseNavigator;
+	ControllerManager.baseContent = baseContent;
 	ControllerManager.defaultController = controller;
 	ControllerManager.currController = controller;
+	ControllerManager.defaultNavigator  = navigatorController;
+	ControllerManager.currNavigator     = navigatorController;
 	
 	// add default view to parent
-	ControllerManager.baseView.add(ControllerManager.defaultController.getView());
+	ControllerManager.baseContent.add(ControllerManager.defaultController.getView());
+	ControllerManager.baseNavigator.add(ControllerManager.defaultNavigator.getView());
 	
 	// register listener
-	Alloy.CFG.REF_NAVIGATION_BAR.RegisterListener({type: Alloy.CFG.NAVBAR_BASE_ANIMATE_END, callback: OnNavBaseAnimateEnd});
+	// Alloy.CFG.REF_NAVIGATION_BAR.RegisterListener({type: Alloy.CFG.NAVBAR_BASE_ANIMATE_END, callback: OnNavBaseAnimateEnd});
 };
 
 // switch view
 module.exports.SwitchView = function(e)
 {
 	var viewPath  = e.path;
+	var navPath = e.navPath;
 	var viewTitle = e.title;
 	var viewID    = e.id;
-	
+
 	var nextController = null;
    	var nextView       = null;  	
+   	var nextNavigator  = null;
+   	var nextNavView    = null;
    	
    	Alloy.CFG.REF_WIN.SetViewProtector(true);
    	Ti.API.info("******path: ",viewPath);
    	Ti.API.info("******title: ",viewTitle);
 	Ti.API.info("******id: ",viewID);
-   	// if((viewID == ControllerManager.currController.getView().id) && Alloy.Globals.WebServiceManager.HasError())
-   	// {
-   		// ControllerManager.RefreshView();
-   	// }
-   	// only change view if different id
    	
    	if(viewID != ControllerManager.currController.getView().id)
 	{
@@ -95,56 +107,50 @@ module.exports.SwitchView = function(e)
 	   	try
 	   	{
 	   		nextController = Alloy.createController(viewPath);
+	   		nextNavigator = Alloy.createController(navPath);
 	   		Ti.API.info("******new ncontroller id: ",nextController.getView().id);
 	   		nextView = nextController.getView();
+	   		nextNavView = nextNavigator.getView();
 	   	}
 	   	catch(err)
 	   	{
-	   		// Alloy.Globals.ErrorLog({type: Alloy.Globals.ErrorLog.CHANGE_VIEW_ERROR, desc: JSON.stringify(err)});
 	   		nextController =  ControllerManager.defaultController;
-	   		nextView = ControllerManager.defaultController.getView();
+	   		nextView = nextController.getView();
+	   		nextNavigator = ControllerManager.defaultNavigator;
+	   		nextNavView = nextNavigator.getView();
 	   	}
 	   	
-	   	Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns(true);
+	   	// Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns(true);
 	   	   		
-		if(nextController)
+		if(nextController && nextNavigator)
 		{
-			// show title
-			// Alloy.CFG.REF_NAVIGATION_BAR.getView("title").text = viewTitle;
-			
-			// on islogin return
-			// var OnIsLoginReturn = function(e)
-			// {
-				 ControllerManager.baseView.add(nextView);
-				// if(e == true && nextController.OnEnter)
-				// {
-					// nextController.OnEnter();	
-					// if(nextController.OnFirstLoad) nextController.OnFirstLoad();
-					// nextController.hasEntered = true;  
-				// }				
-// 				
-				 if(ControllerManager.currController != null) 
+			ControllerManager.baseContent.add(nextView);
+			ControllerManager.baseNavigator.add(nextNavView);
+
+			if(ControllerManager.currController != null) 
+			{
+				ControllerManager.baseContent.remove(ControllerManager.currController.getView());	
+				if(ControllerManager.currController.OnExit && ControllerManager.currController.hasEntered) 
 				{
-					ControllerManager.baseView.remove(ControllerManager.currController.getView());	
-					if(ControllerManager.currController.OnExit && ControllerManager.currController.hasEntered) 
-					{
-						ControllerManager.currController.OnExit();
-					}
-					//Alloy.Globals.LoginManager.DestroyLoginView(ControllerManager.currController);
-					if(ControllerManager.currController.OnDestroy) ControllerManager.currController.OnDestroy();
-					ControllerManager.currController.destroy();
-					ControllerManager.currController = null;
-				}				
-				ControllerManager.prevController = ControllerManager.currController;
-				ControllerManager.currController = nextController;		
-			// };			
-			//Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});		
+					ControllerManager.currController.OnExit();
+				}
+				if(ControllerManager.currController.OnDestroy){
+					ControllerManager.currController.OnDestroy();
+				}
+				ControllerManager.currController.destroy();
+				ControllerManager.currController = null;
+			}				
+			ControllerManager.prevController = ControllerManager.currController;
+			ControllerManager.currController = nextController;	
+			ControllerManager.prevNavigator  = ControllerManager.currNavigator;
+			ControllerManager.currNavigator	 = nextNavigator;
 		} 	
 	}   	   	
 		
 	// animate view	
 	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0){
 		Ti.App.fireEvent('showMenu',{});
+		Alloy.CFG.REF_WIN.SetViewProtector(false);
 	}
 		// Alloy.CFG.REF_NAVIGATION_BAR.getView("btnMenu").fireEvent("click");
 	else
@@ -173,8 +179,8 @@ module.exports.RefreshView = function(extraParams)
 		nextController = Alloy.createController(viewPath);
 				
 		if(nextController.OnEnter) nextController.OnEnter();	
-		ControllerManager.baseView.add(nextController.getView());
-		ControllerManager.baseView.remove(ControllerManager.currController.getView());
+		ControllerManager.baseContent.add(nextController.getView());
+		ControllerManager.baseContent.remove(ControllerManager.currController.getView());
 		
 		// destroy current controller
 		if(ControllerManager.currController.OnExit) ControllerManager.currController.OnExit();
@@ -187,7 +193,7 @@ module.exports.RefreshView = function(extraParams)
 		var OnIsLoginReturn = function(e)
 		{
 			// add the current controller
-			ControllerManager.baseView.add(ControllerManager.currController.getView());
+			ControllerManager.baseContent.add(ControllerManager.currController.getView());
 			flagIsLogin = e;
 			if(flagIsLogin && ControllerManager.currController.OnEnter)
 			{
@@ -197,7 +203,7 @@ module.exports.RefreshView = function(extraParams)
 			}
 			
 			// remove the dummy controller
-			ControllerManager.baseView.remove(nextController.getView());
+			ControllerManager.baseContent.remove(nextController.getView());
 			if(nextController.OnExit) nextController.OnExit();	
 			if(nextController.OnDestroy) nextController.OnDestroy();	
 			nextController.destroy();
@@ -208,7 +214,7 @@ module.exports.RefreshView = function(extraParams)
 };
 
 // add view
-module.exports.AddView = function(viewPath, params)
+module.exports.AddView = function(viewPath, navPath, params)
 {
 	// return if controller is running
 	if(ControllerManager.isRunning == true) return;
@@ -216,103 +222,64 @@ module.exports.AddView = function(viewPath, params)
 	var flagOnEnter = false; // for loading of loginView
 	// create next controller
 	var nextController = Alloy.createController(viewPath, params);
+	var nextNavigator = Alloy.createController(navPath);
 	
 	// add protector
 	Alloy.CFG.REF_WIN.SetViewProtector(true);
 	ControllerManager.isRunning = true;
 	
 	// exit current controller
-	Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns();
-	if(ControllerManager.currController.OnExit) ControllerManager.currController.OnExit();
+	// Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns();
+	if(ControllerManager.currController.OnExit) {
+		ControllerManager.currController.OnExit();
+	}
 	
+	var baseView = ControllerManager.baseView;
 	var nextView = nextController.getView();
-	nextView.left = "99%";	
+	var nextNavView = nextNavigator.getView();
+	baseView.left = "99%";	
+	
+	ControllerManager.currNavigator.getView().add(nextNavView);
+	ControllerManager.arrayNavigators.push(ControllerManager.prevNavigator);
+	ControllerManager.prevNavigator = ControllerManager.currNavigator;
+	ControllerManager.currNavigator = nextNavigator;
 	
 	ControllerManager.currController.getView().add(nextView);
 	ControllerManager.arrayControllers.push(ControllerManager.prevController);
 	ControllerManager.prevController = ControllerManager.currController;
 	ControllerManager.currController = nextController;	
 	
-	var OnIsLoginReturn = function(e)
+	//add by me
+	var animation = Titanium.UI.createAnimation();
+	animation.left = 0;
+	animation.opacity = 1;
+    animation.duration = Alloy.CFG.BASEVIEW_ANINMATE_SPEED;
+    
+    var AnimComplete = function()
 	{
-		flagOnEnter = e;
-		
-		if(nextController.NO_ANIMATE)
+		animation.removeEventListener("complete", AnimComplete);
+		if(nextController.OnEnter && flagOnEnter == true) 
 		{
-			nextView.left = 0;
-			if(nextController.OnEnter && flagOnEnter == true) 
-			{
-				nextController.OnEnter();	
-				if(nextController.OnFirstLoad) nextController.OnFirstLoad();
-				nextController.hasEntered = true;  
-			}	
-			// clear protector
-			Alloy.CFG.REF_WIN.SetViewProtector(false);	
-			ControllerManager.isRunning = false;
-		}
-		else if(ControllerManager.currController.USE_INTERVAL_ANIMATE)
-		{
-			var moveLeft = function()
-			{	
-				if(nextView.left <= 10 )
-				{
-					nextView.left = 0;	
-					clearInterval(interval);
-					if(nextController.OnEnter && flagOnEnter == true) 
-					{
-						nextController.OnEnter();	
-						if(nextController.OnFirstLoad) nextController.OnFirstLoad();
-						nextController.hasEntered = true;  
-					}	
-					// clear protector
-					Alloy.CFG.REF_WIN.SetViewProtector(false);	
-					ControllerManager.isRunning = false;
-					//$.getView().fireEvent("animateEnd")
-					//$.isRunning = false
-				}
-				else
-					nextView.left -= 10;			
-			};	
-			nextView.left = nextView.rect.x;
-			var interval = setInterval(moveLeft, 5);
-							
-		}
-		else
-		{
-			var anim = Ti.UI.createAnimation();
-		    anim.left = 0;
-		    anim.opacity = 1;
-		    anim.duration = Alloy.CFG.BASEVIEW_ANINMATE_SPEED;
-			nextView.animate(anim);
-			
-			var OnComplete = function()
-			{
-				anim.removeEventListener("complete", OnComplete);
-				if(nextController.OnEnter && flagOnEnter == true) 
-				{
-					nextController.OnEnter();	
-					if(nextController.OnFirstLoad) nextController.OnFirstLoad();
-					nextController.hasEntered = true;  
-				}	
-				// clear protector
-				Alloy.CFG.REF_WIN.SetViewProtector(false);	
-				ControllerManager.isRunning = false;
-			};
-			anim.addEventListener("complete", OnComplete);
-		}		
-		//Alloy.Globals.Debug(JSON.stringify(ControllerManager.arrayControllers))		
-		Alloy.Globals.Debug("Array of controller = " + ControllerManager.arrayControllers.length);
+			nextController.OnEnter();	
+			if(nextController.OnFirstLoad) nextController.OnFirstLoad();
+			nextController.hasEntered = true;  
+		}	
+		// clear protector
+		Alloy.CFG.REF_WIN.SetViewProtector(false);	
+		ControllerManager.isRunning = false;
 	};
-	
-	//Alloy.Globals.LoginManager.IsLogin({controllerView: nextController, callback: OnIsLoginReturn});
-	
+	animation.addEventListener("complete", AnimComplete);
+    
+	baseView.animate(animation);
 };
 
 // remove view
-module.exports.RemoveView = function(viewPath)
+module.exports.RemoveView = function()
 {
 	// get current view
+	var baseView = ControllerManager.baseView;
 	var currView = ControllerManager.currController.getView();	
+	var currNavView = ControllerManager.currNavigator.getView();	
 	
 	// workaround to fix some stupid issue	
 	if(ControllerManager.currController.OnExitWorkaround)
@@ -322,39 +289,22 @@ module.exports.RemoveView = function(viewPath)
 	
 	Alloy.CFG.REF_WIN.SetViewProtector(true);
 	
-	Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns();
+	// Alloy.CFG.REF_NAVIGATION_BAR.HideAllBtns();
 	// exit current controller
 	if(ControllerManager.currController.OnExit && ControllerManager.currController.hasEntered)
 	{
 		ControllerManager.currController.OnExit();
 	}
 	
+	var animation = Titanium.UI.createAnimation();
+	animation.left = "99%";
+	
 	var OnComplete = function(e)
-	{
-		/*	
-		anim.removeEventListener("complete", OnComplete)
-		//Alloy.Globals.LoginManager.DestroyLoginView()
-		// enter previous view
-		if(ControllerManager.prevController.OnEnter) ControllerManager.prevController.OnEnter()
-		// exit current view
-				
-		if(ControllerManager.currController.OnDestroy) ControllerManager.currController.OnDestroy()
-		ControllerManager.prevController.getView().remove(currView)
-		ControllerManager.currController.destroy()
-		ControllerManager.currController = null
-		
-		ControllerManager.currController = ControllerManager.prevController
-		ControllerManager.prevController = ControllerManager.arrayControllers.pop()
-		
-		Alloy.CFG.REF_WIN.SetViewProtector(false)
-		*/
-		
-		if(e && e.source) e.source.removeEventListener("complete", OnComplete);
-		//Alloy.Globals.LoginManager.DestroyLoginView()
-		// enter previous view
-		
-				
-		if(ControllerManager.currController.OnDestroy) ControllerManager.currController.OnDestroy();
+	{		
+		animation.removeEventListener('complete',OnComplete);
+		if(ControllerManager.currController.OnDestroy) {
+			ControllerManager.currController.OnDestroy();
+		}
 		ControllerManager.prevController.getView().remove(currView);
 		ControllerManager.currController.destroy();
 		ControllerManager.currController = null;
@@ -364,42 +314,23 @@ module.exports.RemoveView = function(viewPath)
 		ControllerManager.currController = ControllerManager.prevController;
 		ControllerManager.prevController = ControllerManager.arrayControllers.pop();
 		
-		if(prevController.OnEnter) prevController.OnEnter();
+		if(prevController.OnEnter) {
+			prevController.OnEnter();
+		}
+		
+		ControllerManager.prevNavigator.getView().remove(currNavView);
+		ControllerManager.currNavigator.destroy();
+		ControllerManager.currNavigator = null;
+		ControllerManager.currNavigator = ControllerManager.prevNavigator;
+		ControllerManager.prevNavigator = ControllerManager.arrayNavigators.pop();
+		
 		// exit current view	
 		
 		Alloy.CFG.REF_WIN.SetViewProtector(false);		
 	};
 	
-	if(ControllerManager.currController.NO_ANIMATE)
-	{
-		currView.left = "99%";
-		OnComplete();		
-	}	
-	else if(ControllerManager.currController.USE_INTERVAL_ANIMATE)
-	{
-		var moveRight = function()
-		{	
-			if(currView.left >= (Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS - 10))
-			{
-				currView.left = Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS;	
-				clearInterval(interval);
-				OnComplete();
-			}
-			else
-				currView.left += 10;				
-		};	
-		currView.left = currView.rect.x;
-		var interval = setInterval(moveRight, 5);						
-	}	
-	else
-	{
-		var anim = Ti.UI.createAnimation();
-	    anim.left = "99%"; // iOS got issue when set to 100%, the view won't animate
-	    anim.opacity = 1;
-	    anim.duration = Alloy.CFG.BASEVIEW_ANINMATE_SPEED;
-		currView.animate(anim);
-		anim.addEventListener("complete", OnComplete);		
-	}
+	animation.addEventListener("complete",OnComplete);
+	currView.animate(animation);
 };
 
 // return to main

@@ -1,0 +1,15 @@
+<Alloy>
+	<View id="navigator">
+		<View layout="horizontal">
+			<View id="leftView">
+				<ImageView id="menuBtn"/>
+			</View>
+			<View id="middleView">
+				<TextField id="searchBox"/>
+			</View>
+			<View id="rightView">
+				<ImageView id="searchBtn"/>
+			</View>
+		</View>
+	</View>
+</Alloy>

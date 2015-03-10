@@ -23,8 +23,10 @@
 	        <!--> base view -->
 	        <!--View id="viewBase" onSwipe="OnSwipe" onTouchstart="OnTouchStart" onTouchend="OnTouchEnd" onTouchmove="OnTouchMove"-->
 	        <View id="viewBase">
-	            <Require id="navigationBar" src="navigationBar"/>
-	            <ImageView id="logoSAF"/>   
+	        	<View id="navigator"/>
+	        	<View id="mainContent"/>
+	            <!-- <Require id="navigationBar" src="navigationBar"/> -->
+	            <!-- <ImageView id="logoSAF"/>    -->
 	            <View class="viewProtector" id="viewProtectorPage"/>              
 	        </View>    
 	   		<View class="viewProtector" id="viewProtectorWin" top="0"/>       

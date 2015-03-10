@@ -82,20 +82,22 @@ $.logoutTitle.font = {
 	fontWeight: 'bold',
 };
 
-var OnItemClick = function(path,title,viewID) 
+var OnItemClick = function(path,navPath,title,viewID) 
 {  	
 
 	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0)
 	{		
-		if(Alloy.Globals.ControllerManager.isRunning == false)
-		{
-			Alloy.Globals.ControllerManager.isRunning = true;
+		// alert(Alloy.Globals.ControllerManager.isRunning);
+		// if(Alloy.Globals.ControllerManager.isRunning == false)
+		// {
+			// Alloy.Globals.ControllerManager.isRunning = true;
 			Alloy.Globals.ControllerManager.SwitchView({
 				path: path, 
+				navPath: navPath,
 				title: title,
 				id: viewID,
 			});
-		}		
+		// }		
     }
 };
 
@@ -244,20 +246,24 @@ init();
 
 $.homeSelect.addEventListener("click",function(){
 	var path = Alloy.CFG.PATH_MAINPAGE;
+	var navPath = Alloy.CFG.NAVPATH_MAINPAGE;
 	var title = "MainPage";
 	var viewID = "viewMainPage";
 	switchTab(title);
-	OnItemClick(path,title,viewID);
-	Ti.App.fireEvent("switch_mainPage",{});
+	OnItemClick(path,navPath,title,viewID);
+	// Ti.App.fireEvent("showMenu",{});
+	// Ti.App.fireEvent("switch_mainPage",{});
 });
 
 $.profileSelect.addEventListener("click",function(){
 	var path = Alloy.CFG.PATH_PROFILE;
+	var navPath = Alloy.CFG.NAVPATH_PROFILE;
 	var title = "Profile";
 	var viewID = "viewProfile";
 	switchTab(title);
-	OnItemClick(path,title,viewID);
-	Ti.App.fireEvent("switch_profile",{});
+	OnItemClick(path,navPath,title,viewID);
+	// Ti.App.fireEvent("showMenu",{});
+	// Ti.App.fireEvent("switch_profile",{});
 });
 
 $.searchSelect.addEventListener("click",function(){
@@ -296,6 +302,7 @@ $.enquirySelect.addEventListener("click",function(){
 //===========================================================================	
 
 // switch menu item
+/*
 exports.SwitchMenuItem = function(e)
 {
 	var type = e.type;
@@ -311,12 +318,13 @@ exports.SwitchMenuItem = function(e)
 			Alloy.Globals.ControllerManager.isRunning = true;
 			Alloy.Globals.ControllerManager.SwitchView({
 				path: row.path, 
+				navPath: row.navPath,
 				title: row.children[0].text,
 				id: row.viewID
 			});
 		}		
 	}
-};
+};*/
 //===========================================================================
 // END OF EXPORTS
 //===========================================================================
