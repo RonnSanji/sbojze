@@ -465,6 +465,7 @@ var OnBtnMenuClick = function(e)
 		
 		var OnComplete = function()
 		{
+			Alloy.CFG.REF_WIN.SetViewProtector(false);
 			anim.removeEventListener("complete", OnComplete);
 			Alloy.CFG.REF_VIEW_BASE.left = anim.left;
 			$.getView().fireEvent("animateEnd");

@@ -150,7 +150,7 @@ module.exports.SwitchView = function(e)
 	// animate view	
 	if(Alloy.CFG.REF_VIEW_BASE.rect.x > 0){
 		Ti.App.fireEvent('showMenu',{});
-		Alloy.CFG.REF_WIN.SetViewProtector(false);
+		// Alloy.CFG.REF_WIN.SetViewProtector(false);
 	}
 		// Alloy.CFG.REF_NAVIGATION_BAR.getView("btnMenu").fireEvent("click");
 	else
