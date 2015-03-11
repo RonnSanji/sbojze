@@ -15,6 +15,7 @@
 // HANDLERS
 //===========================================================================	
 // on button menu click
+/*
 var OnBtnMenuClick = function(e) 
 {  
 	Alloy.Globals.Debug("Navigator fire event animate ");
@@ -228,10 +229,17 @@ exports.UnRegisterListener = function(e)
 //===========================================================================
 
 Ti.App.addEventListener('showMenu',OnBtnMenuClick);
+Ti.App.addEventListener('backBtn',OnBtnBackClick);
 
 Ti.App.addEventListener('switch_mainPage',function(){
 	$.viewNavigatorBar.removeAllChildren();
 	var navigator = Alloy.createController("navigationBar_mainPage").getView('navigator');
+	$.viewNavigatorBar.add(navigator);
+});
+
+Ti.App.addEventListener('switch_detail',function(){
+	$.viewNavigatorBar.removeAllChildren();
+	var navigator = Alloy.createController("navigationBar_Detail").getView('navigator');
 	$.viewNavigatorBar.add(navigator);
 });
 
@@ -240,5 +248,6 @@ Ti.App.addEventListener('switch_profile',function(){
 	var navigator = Alloy.createController("navigationBar_profile").getView('navigator');
 	$.viewNavigatorBar.add(navigator);
 });
+*/
 
 

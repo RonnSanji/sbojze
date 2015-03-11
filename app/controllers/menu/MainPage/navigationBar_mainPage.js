@@ -24,5 +24,6 @@ $.searchBtn.width = 50*dp_width_rate;
 $.searchBtn.height = 50*dp_width_rate;
 
 $.menuBtn.addEventListener('click',function(){
+	// alert('click');
 	Ti.App.fireEvent('showMenu',{});
 });

@@ -45,8 +45,21 @@
 	color: "#000"
 } 
 
+"#navigator":{
+	top:0,
+	height:"7%",
+	width:"100%",
+}
+
+"#mainContent":{
+	top:"7%",
+	height:"93%",
+	width:"100%",
+}
+
 "#viewBase": {
 	//left: "260dip",
+	top:0,
 	width: "100%",
 	height: "100%",
 	//backgroundImage: Alloy.CFG.IMG_DEFAULT_SPLASH
@@ -70,4 +83,3 @@
 	touchEnabled: false,
 	zIndex: 1
 }
-

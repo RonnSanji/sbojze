@@ -1,0 +1,198 @@
+
+"#viewDetail":{
+   height:"fill",
+   width:"100%",
+   backgroundColor:"#EAEAFA",
+}
+
+"#content":{
+	height:"95%",
+	width:"93%",
+	backgroundColor:"#FFFFFF",
+	// borderWidth:2,
+	// borderColor:"#000000",
+}
+
+"#photoView":{
+	height:"38%",
+	width:"100%",
+}
+
+"#photo":{
+	// image:"/images/hotel3.jpg",
+	height:"100%",
+	width:"100%"
+}
+
+"#addressView":{
+	height:"23%",
+	width:"100%",
+	// borderWidth:1,
+	// borderColor:"#000000",
+}
+
+"#addressViewLeft":{
+	height:"100%",
+	width:"50%",
+	// borderWidth:1,
+	// borderColor:"#000000",
+}
+
+"#addressTitleView":{
+	height:Ti.UI.SIZE,
+	width:"100%",
+}
+
+"#addressTitle":{
+	text:"Pan Pacific Hotel",
+	textAlign:"left",
+}
+
+"#addressInfoView":{
+	height:Ti.UI.SIZE,
+	width:"100%",
+}
+
+"#addressInfoImage":{
+	image:"/images/hotel3.jpg",
+}
+
+"#addressInfoText":{
+	text:"Ballroom Kingfisher 123 Orchard Read S123456",
+	textAlign:"left",
+}
+
+"#addressPhoneView":{
+	height:Ti.UI.SIZE,
+	width:"100%",
+}
+
+"#addressPhoneImage":{
+	image:"/images/hotel3.jpg",
+}
+
+"#addressPhoneText":{
+	text:"61234567",
+	textAlign:"left",
+}
+
+"#durationView":{
+	height:"15%",
+	width:"100%",
+	// borderWidth:1,
+	// borderColor:"#000000",
+}
+
+"#durationViewLeft":{
+	height:"100%",
+	width:"50%",
+}
+
+"#durationViewRight":{
+	height:"100%",
+	width:"fill",
+}
+
+"#StartTimeTitle":{
+	width:"90%",
+	text:"Starting Time",
+	textAlign:"right",
+}
+
+"#DurationTitle":{
+	width:"90%",
+	text:"Duration",
+	textAlign:"right",
+}
+
+"#AttireTitle":{
+	width:"90%",
+	text:"Attire",
+	textAlign:"right",
+}
+
+"#StartTimeContent":{
+	width:"90%",
+	text:"8 a.m",
+	textAlign:"left",
+}
+
+"#DurationContent":{
+	width:"90%",
+	text:"8 hours",
+	textAlign:"left",
+}
+
+"#AttireContent":{
+	width:"90%",
+	text:"Black Pants Covered Shoes",
+	textAlign:"left",
+}
+
+"#statusView":{
+	height:"18%",
+	width:"100%",
+}
+
+"#vacancyView":{
+	backgroundColor:"#EFEFEF",
+	width:"50%",
+	height:"100%",
+}
+
+"#dateView":{
+	backgroundColor:"#FAFAFA",
+	width:"50%",
+	height:"100%",
+}
+
+"#vacancyLineOne":{
+	height:"60%",
+	width:"100%",
+	// borderWidth:1,
+	// borderColor:"#000000",
+}
+
+"#vacancyCurrent":{
+	width:"45%",
+	text:"6",
+	textAlign:"right",
+	color:"#43BC2B",
+}
+
+"#vacancyMax":{
+	width:"45%",
+	text:" / 12",
+	textAlign:"left",
+	color:"#B3B3B3",
+}
+
+"#vacancyTitle":{
+	top:"5%",
+	text:"VACANCIES",
+	textAlign:"center",
+	color:"#000000",
+}
+
+"#dateImage":{
+	image:"/images/hotel3.jpg",
+}
+
+"#dateText":{
+	text:"05/03/2015",
+	textAlign:"center",
+	color:"#000000",
+}
+
+"#applyView":{
+	backgroundColor:"#4BCFED",
+	height:"fill",
+	width:"100%",
+}
+
+"#applyText":{
+	color:"#FFFFFF",
+	width:"100%",
+	text:"APPLY NOW",
+	textAlign:"center",
+}
