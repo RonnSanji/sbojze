@@ -1,5 +1,22 @@
 <Alloy>
 	<View id="viewManage">	
-		<Label id ="test">Manage</Label>
+		<View id="main" layout="vertical">
+			<View id="toptabs"layout="horizontal">
+				<View id="tab_all">
+					<Label id="tab_all_text"/>
+				</View>
+				<View id="tab_accepted">
+					<Label id="tab_accepted_text"/>
+				</View>
+				<View id="tab_confirmed">
+					<Label id="tab_confirmed_text"/>
+				</View>
+			</View>
+			
+			<ScrollView id="body" layout="vertical" scrollType = "vertical">
+				
+			</ScrollView>
+		
+		</View>
 	</View>
 </Alloy>
