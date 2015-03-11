@@ -17,7 +17,7 @@ function addPosition(position){
 		height:200*dp_width_rate,
 		layout:"horizontal",
 		borderColor:"#999999",
-		borderWidth:1,
+		borderWidth:0.2,
 	});
 	
 	var leftView = Ti.UI.createView({

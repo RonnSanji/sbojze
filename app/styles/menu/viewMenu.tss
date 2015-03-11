@@ -62,8 +62,8 @@
 
 ".border":{
 	top:0,
-	height:2,
-	backgroundColor:"#FFFFFF",
+	height:1.5,
+	backgroundColor:"#555555",
 }
 
 ".line":{
