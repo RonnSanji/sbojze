@@ -1,0 +1,56 @@
+
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: pickerDate.tss
+ * Description: Date picker
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+
+"Picker": {
+	type: Ti.UI.PICKER_TYPE_DATE,
+	selectionIndicator: "true"
+	//useSpinner: "true"
+}
+
+"#viewPickerBase": {
+	height: Ti.UI.SIZE
+	//backgroundImage:'/images/ShareItems/picker_roller_bg_android.png'
+}
+
+// for android picker
+"#viewPickerBg": {
+	top: "44dip",
+	height: Ti.UI.SIZE,
+	backgroundImage:'/images/ShareItems/picker_roller_bg_android.png'
+}
+
+
+"#viewHeader": {
+	top: 0,
+	height: "44dip",
+	backgroundColor: "black"
+}
+
+"#btnDone": {
+	right: "10dip", 
+	height: "30dip", 
+	width: "90dip",
+	title: "Done", 
+	color: "white", 
+	focusable: true,
+	backgroundImage: "/images/ShareItems/button_bg.png",
+	backgroundSelectedImage: "/images/ShareItems/button_bg_press.png",		
+	font: {fontFamily: "Arial", fontSize: "14dip", fontWeight: "bold"}
+}
+"#labelData": {
+	left: "10dip", 
+	text: "TEST",
+	color: "white", 
+	font: {fontFamily: "Arial", fontSize:'20dip'}
+}

@@ -1,0 +1,27 @@
+
+<!--
+/*
+ * Copyright: Activate Interactive
+ * Date: March 01 2014
+ * 
+ * Title: pickerText.xml
+ * Description: Text picker
+ * 
+ * ChangeLog: 
+ * 
+ * 
+ * 
+ */
+-->
+
+<Alloy>
+   <View id="viewPickerBase" visible="false" bottom="-70%">
+      <View id="viewHeader">
+          <Button id="btnDone" onClick="OnBtnDoneClick"></Button>
+          <Label id="labelData"></Label>
+      </View>
+      <View id="viewPickerBg">
+          <Picker id="picker" onChange="OnPickerChange"></Picker>
+      </View>
+   </View>
+</Alloy>
