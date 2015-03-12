@@ -1,10 +1,58 @@
 "#viewManage": {
-	top: "44dip",
+	// top: "7%",
 	width: "100%",
 	bottom: 0,
 	backgroundColor:'#FFFFFF'
 }
 
-"#test":{
-	
+"#main":{
+	left:"2%",
+	width:"96%",
+}
+
+"#toptabs":{
+	top:0,
+	height:"10%",
+	width:"100%",
+	// borderWidth:1,
+}
+
+"#tab_all":{
+	left:0,
+	width:"33.3%",
+	top:"10%",
+	height:"80%",
+	borderWidth:1,
+	borderColor:"#878787",
+}
+
+"#tab_accepted":{
+	width:"33.3%",
+	top:"10%",
+	height:"80%",
+	borderWidth:1,
+	borderColor:"#878787",
+}
+
+"#tab_confirmed":{
+	width:"fill",
+	top:"10%",
+	height:"80%",
+	borderWidth:1,
+	borderColor:"#878787",
+}
+
+"#tab_all_text":{
+	text:"ALL",
+	textAlign:"center",
+}
+
+"#tab_accepted_text":{
+	text:"ACCEPTED",
+	textAlign:"center",
+}
+
+"#tab_confirmed_text":{
+	text:"CONFIRMED",
+	textAlign:"center",
 }

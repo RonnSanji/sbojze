@@ -1,5 +1,47 @@
 <Alloy>
 	<View id="viewProfile">	
-		<Label id ="test">Profile</Label>
+		<View id="main" layout="vertical">
+			<View id="statueView">
+				<ImageView id="statue"/>
+			</View>
+			
+			<View id="usernameView">
+				<Label id="usernameLabel"/>
+			</View>
+			
+			<View id="nameView" layout="horizontal" class="view">
+				<Label id="nameTitle"/>
+				<Label id="nameContent"/>
+			</View>
+			
+			<View id="genderView" layout="horizontal" class="view">
+				<Label id="genderTitle"/>
+				<Label id="genderContent"/>
+			</View>
+			
+			<View id="ageView" layout="horizontal" class="view">
+				<Label id="ageTitle"/>
+				<Label id="ageContent"/>
+			</View>
+			
+			<View id="nricView" layout="horizontal" class="view">
+				<Label id="nricTitle"/>
+				<Label id="nricContent"/>
+			</View>
+			
+			<View id="emailView" layout="horizontal" class="view">
+				<Label id="emailTitle"/>
+				<Label id="emailContent"/>
+			</View>
+			
+			<View id="mobileView" layout="horizontal" class="view">
+				<Label id="mobileTitle"/>
+				<Label id="mobileContent"/>
+			</View>
+			
+			<View id="ICView">
+				
+			</View>
+		</View>
 	</View>
 </Alloy>

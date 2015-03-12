@@ -17,14 +17,14 @@
 //===========================================================================	
 // on menu item click
 
-var dp_width_rate;
-if(Ti.Platform.osname == 'android')
-{
-	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-}
-else{
-	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-}
+var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
+// if(Ti.Platform.osname == 'android')
+// {
+	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
+// }
+// else{
+	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
+// }
 
 $.photo.width = dp_width_rate*100;
 $.photo.height = dp_width_rate*100;
@@ -268,18 +268,20 @@ $.profileSelect.addEventListener("click",function(){
 
 $.searchSelect.addEventListener("click",function(){
 	var path = Alloy.CFG.PATH_SEARCH;
+	var navPath = Alloy.CFG.NAVPATH_SEARCH;
 	var title = "Search";
 	var viewID = "viewSearch";
 	switchTab(title);
-	OnItemClick(path,title,viewID);
+	OnItemClick(path,navPath,title,viewID);
 });
 
 $.manageSelect.addEventListener("click",function(){
 	var path = Alloy.CFG.PATH_MANAGE;
+	var navPath = Alloy.CFG.NAVPATH_MANAGE;
 	var title = "Manage";
 	var viewID = "viewManage";
 	switchTab(title);
-	OnItemClick(path,title,viewID);
+	OnItemClick(path,navPath,title,viewID);
 });
 
 $.settingsSelect.addEventListener("click",function(){

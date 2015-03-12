@@ -1,14 +1,13 @@
 var args = arguments[0] || {};
 
-
-var dp_width_rate;
-if(Ti.Platform.osname == 'android')
-{
-	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-}
-else{
-	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-}
+var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
+// if(Ti.Platform.osname == 'android')
+// {
+	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
+// }
+// else{
+	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
+// }
 
 function addPosition(position){
 	

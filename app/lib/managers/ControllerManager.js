@@ -90,6 +90,8 @@ module.exports.SwitchView = function(e)
 	var viewTitle = e.title;
 	var viewID    = e.id;
 
+	// alert(navPath);
+
 	var nextController = null;
    	var nextView       = null;  	
    	var nextNavigator  = null;

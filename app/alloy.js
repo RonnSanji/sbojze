@@ -10,6 +10,16 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+var dp_width_rate = null;
+if(Ti.Platform.osname == 'android')
+{
+	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
+}
+else{
+	dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
+}
+Alloy.Globals.DP_WIDTH_RATE = dp_width_rate;
+
 var screen_width;
 if(Ti.Platform.osname == 'android')
 {
@@ -87,15 +97,15 @@ Alloy.CFG.ISDEBUG = true;
    Alloy.CFG.PATH_MANAGE               = "menu/Manage/viewManage";
    Alloy.CFG.PATH_SETTINGS               = "menu/Settings/viewSettings";
    Alloy.CFG.PATH_ENQUIRY               = "menu/Enquiry/viewEnquiry";
-   Alloy.CFG.PATH_DETAIL                = "menu/MainPage/viewDetail";
+   Alloy.CFG.PATH_DETAIL                = "menu/Detail/viewDetail";
    
    Alloy.CFG.NAVPATH_MAINPAGE              = "menu/MainPage/navigationBar_mainPage";
    Alloy.CFG.NAVPATH_PROFILE               = "menu/Profile/navigationBar_Profile";
-   // Alloy.CFG.NAVPATH_SEARCH               = "menu/Search/viewSearch";
-   // Alloy.CFG.NAVPATH_MANAGE               = "menu/Manage/viewManage";
+   Alloy.CFG.NAVPATH_SEARCH               = "menu/Search/navigationBar_Search";
+   Alloy.CFG.NAVPATH_MANAGE               = "menu/Manage/navigationBar_Manage";
    // Alloy.CFG.NAVPATH_SETTINGS               = "menu/Settings/viewSettings";
    // Alloy.CFG.NAVPATH_ENQUIRY               = "menu/Enquiry/viewEnquiry";
-   Alloy.CFG.NAVPATH_DETAIL                = "menu/MainPage/navigationBar_Detail";
+   Alloy.CFG.NAVPATH_DETAIL                = "menu/Detail/navigationBar_Detail";
    
 // Alloy.CFG.PATH_WORKOUT_TRACKER     = "menu/fitness/WorkoutTracker/viewWorkoutTracker";
  Alloy.CFG.PATH_CIRCUIT_TRANINING     = "menu/fitness/CircuitTraining/viewCircuitTraining";
