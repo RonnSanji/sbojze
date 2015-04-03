@@ -1,0 +1,11 @@
+<Alloy>
+	<View id="viewDatePicker">
+		<View id="pickerView" layout="vertical">
+			<View id="pickerTopView" layout="horizontal">
+				<Label id="dateDisplay"/>
+				<Button id="doneBtn"/>
+			</View>
+			<Picker id="datePicker"/>
+		</View>
+	</View>
+</Alloy>

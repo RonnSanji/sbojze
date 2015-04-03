@@ -1,10 +1,146 @@
 "#viewSearch": {
-	top: "44dip",
 	width: "100%",
-	bottom: 0,
 	backgroundColor:'#FFFFFF'
 }
 
-"#test":{
-	
+"#conditionLabel":{
+	top:0,
+	height:"6%",
+	width:"94%",
+	left:"3%",
+}
+
+"#dateLabel":{
+	top:"10%",
+	height:"80%",
+	left:0,
+	width:"50%",
+	backgroundColor:"#878787",
+	borderWidth:1,
+	borderColor:"#878787",
+}
+
+"#salaryLabel":{
+	top:"10%",
+	height:"80%",
+	left:0,
+	width:"fill",
+	backgroundColor:"#FFFFFF",
+	borderWidth:1,
+	borderColor:"#ABABAB",
+}
+
+"#dateText":{
+	text:"Date",
+	textAlign:"center",
+	color:"#FFFFFF",
+}
+
+"#salaryText":{
+	text:"Salary",
+	textAlign:"center",
+	color:"#878787",
+}
+
+"#dateSearch":{
+	top:0,
+	height:"15%",
+	// borderWidth:1,
+	width:"94%",
+	left:"3%",
+}
+
+"#fromView":{
+	top:"5%",
+	height:"44.5%",
+	width:"100%",
+}
+
+"#border":{
+	top:0,
+	height:"1%",
+	width:"100%",
+	backgroundColor:"#878787",
+}
+
+"#toView":{
+	height:"44.5%",
+	width:"100%",
+}
+
+"#fromTitle":{
+	left:"3%",
+	width:"20%",
+	text:"FROM:",
+	color:"#878787",
+	textAlign:"right",
+	height:"100%",
+}
+
+"#toTitle":{
+	left:"3%",
+	width:"20%",
+	text:"TO:",
+	color:"#878787",
+	textAlign:"right",
+	height:"100%",
+}
+
+"#fromDate":{
+	left:"10%",
+	text:"Wed, 03-05-2015",
+	textAlign:"left",
+	height:"100%",
+}
+
+"#toDate":{
+	left:"10%",
+	text:"Fri, 03-07-2015",
+	textAlign:"left",
+	height:"100%",
+}
+
+"#OrderTypeLabel":{
+	top:0,
+	height:"6%",
+	width:"94%",
+	left:"3%",
+}
+
+"#AscendingLabel":{
+	top:"10%",
+	height:"80%",
+	left:0,
+	width:"50%",
+	backgroundColor:"#878787",
+	borderWidth:1,
+	borderColor:"#878787",
+}
+
+"#DecendingLabel":{
+	top:"10%",
+	height:"80%",
+	left:0,
+	width:"fill",
+	backgroundColor:"#FFFFFF",
+	borderWidth:1,
+	borderColor:"#ABABAB",
+}
+
+"#AscendingText":{
+	text:"Ascending",
+	textAlign:"center",
+	color:"#FFFFFF",
+}
+
+"#DecendingText":{
+	text:"Decending",
+	textAlign:"center",
+	color:"#878787",
+}
+
+"#borderAboveScroll":{
+	height:1,
+	width:"100%",
+	backgroundColor:"#878787",
 }

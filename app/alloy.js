@@ -47,6 +47,7 @@ var Alloy = require("alloy"), _ = require("alloy/underscore")._, Backbone = requ
 //** managers
 // Alloy.Globals.ResourceMgr       = require("managers/ResourceManager");
  Alloy.Globals.ControllerManager = require("managers/ControllerManager");
+ Alloy.Globals.commonFunc = require("managers/commonFunc");
 // Alloy.Globals.LoginManager      = require("managers/LoginManager");
 // Alloy.Globals.WebServiceManager = require("managers/WebServiceManager");
 // Alloy.Globals.CalendarManager   = require("managers/CalendarManager");
@@ -98,6 +99,8 @@ Alloy.CFG.ISDEBUG = true;
    Alloy.CFG.PATH_SETTINGS               = "menu/Settings/viewSettings";
    Alloy.CFG.PATH_ENQUIRY               = "menu/Enquiry/viewEnquiry";
    Alloy.CFG.PATH_DETAIL                = "menu/Detail/viewDetail";
+   
+   Alloy.CFG.PATH_DATEPICKER            = "menu/Pickers/viewDatePicker";
    
    Alloy.CFG.NAVPATH_MAINPAGE              = "menu/MainPage/navigationBar_mainPage";
    Alloy.CFG.NAVPATH_PROFILE               = "menu/Profile/navigationBar_Profile";

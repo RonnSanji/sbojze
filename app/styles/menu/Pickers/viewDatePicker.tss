@@ -1,0 +1,39 @@
+"#pickerView":{
+	width:"100%",
+	// bottom:0,
+	bottom:"-50%",
+	height:Ti.UI.SIZE,
+	visible:false,
+	touchEnabled:false,
+}
+
+"#pickerTopView":{
+	top:0,
+	width:"100%",
+	height:Ti.UI.SIZE,
+	backgroundColor:"#4BCFED",
+}
+
+"#dateDisplay":{
+	left:"20%",
+	width:"60%",
+	text:"12 Mar 2015",
+	textAlign:"center",
+	color:"#FFFFFF",
+	font:{
+		fontSize:18,
+		fontWeight:'bold',
+	}
+}
+
+"#doneBtn":{
+	title:"Done",
+	font:{
+		fontWeight:"bold",
+	},
+	color:"#FFFFFF",
+}
+
+"#datePicker":{
+	type:Ti.UI.PICKER_TYPE_DATE,
+}

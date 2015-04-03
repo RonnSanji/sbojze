@@ -1,5 +1,40 @@
 <Alloy>
-	<View id="viewSearch">	
-		<Label id ="test">Search</Label>
+	<View id="viewSearch">
+		
+		<View id="main" layout="vertical">
+			<View id="conditionLabel" layout="horizontal">
+				<View id="dateLabel">
+					<Label id="dateText"/>
+				</View>
+				<View id="salaryLabel">
+					<Label id="salaryText"/>
+				</View>
+			</View>	
+			
+			<View id="dateSearch" layout="vertical">
+				<View id="fromView" layout="horizontal">
+					<Label id="fromTitle"/>
+					<Label id="fromDate"/>
+				</View>
+				<View id="border"/>
+				<View id="toView" layout="horizontal">
+					<Label id="toTitle"/>
+					<Label id="toDate"/>
+				</View>
+			</View>
+			
+			<View id="OrderTypeLabel" layout="horizontal">
+				<View id="AscendingLabel">
+					<Label id="AscendingText"/>
+				</View>
+				<View id="DecendingLabel">
+					<Label id="DecendingText"/>
+				</View>
+			</View>	
+			
+			<View id="borderAboveScroll"/>
+			
+			<ScrollView id="jobList" layout="vertical" scrollType="vertical"/>
+		</View>
 	</View>
 </Alloy>
