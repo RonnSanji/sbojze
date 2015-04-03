@@ -5,10 +5,11 @@
 				<ImageView id="menuBtn"/>
 			</View>
 			<View id="middleView">
-				<TextField id="searchBox"/>
-			</View>
-			<View id="rightView">
-				<ImageView id="searchBtn"/>
+				<TextField id="searchBox">
+					<View id="rightView">
+						<ImageView id="searchBtn"/>
+					</View>
+				</TextField>
 			</View>
 		</View>
 	</View>

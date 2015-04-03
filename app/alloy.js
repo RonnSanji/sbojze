@@ -350,7 +350,7 @@ Alloy.CFG.COLOR_VIEW_HIGHLIGHT_BG = "#EDEFD9";
 // properties
 Alloy.CFG.BASEVIEW_ANINMATE_SPEED     = 300;
 // Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = 260; //+ "dip"
-Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = screen_width*0.67;
+Alloy.CFG.BASEVIEW_ANINMATE_FINAL_POS = screen_width*0.668;
 Alloy.CFG.ONE_THIRD_PERCENTAGE        = (100 / 3) + "%";
 Alloy.CFG.TWO_THIRD_PERCENTAGE        = ((100 / 3) * 2) + "%";
 Alloy.CFG.VIEW_LOGIN_SCROLLABLE       = (Ti.Platform.Android && Ti.Platform.displayCaps.platformHeight < 500) ? true : false;
@@ -616,7 +616,5 @@ Alloy.CFG.SERVER = {
 Alloy.CFG.ENABLE_FLURRY_ANALYTICS = true;
 Alloy.CFG.APPLICATION_BUILD       = Alloy.CFG.BUILD.DEVELOPMENT;
 Alloy.CFG.SERVER_TYPE             = Alloy.CFG.SERVER.STAGING;
-Alloy.CFG.SERVER_ACCESS_TIMEOUT   = 15000;        // httpClient access timeout in ms
-Alloy.CFG.SERVER_LOGIN_TIMEOUT    = (14 * 60000); // login timeout in min * 60000
 
 
