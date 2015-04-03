@@ -127,7 +127,7 @@ var Init = function()
 	Alloy.Globals.ActivityIndicator.Init(Alloy.CFG.REF_WIN);
 	Alloy.Globals.ControllerManager.Init(Alloy.CFG.REF_VIEW_BASE, Alloy.CFG.REF_NAVIGATOR, Alloy.CFG.REF_MAINCONTENT,Alloy.createController("menu/viewSplash"), Alloy.createController("navigationBar"));
 
-	Ti.App.fireEvent('showMenu',{});
+	// Ti.App.fireEvent('showMenu',{});
 
 	if(Ti.App.Properties.getBool(Alloy.CFG.RESOURCE_FLAG_APP_INSTALLED, false) == false)
 	{
