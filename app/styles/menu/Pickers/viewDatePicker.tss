@@ -21,7 +21,7 @@
 	textAlign:"center",
 	color:"#FFFFFF",
 	font:{
-		fontSize:18,
+		// fontSize:18,
 		fontWeight:'bold',
 	}
 }

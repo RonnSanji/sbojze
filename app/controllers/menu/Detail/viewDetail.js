@@ -1,15 +1,10 @@
+//PROPERTIES
 var args = arguments[0] || {};
-
 var position = args.position;
+//END OF PEPERTIES
 
+//FORMAT
 var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;;
-// if(Ti.Platform.osname == 'android')
-// {
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-// }
-// else{
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-// }
 
 $.addressTitle.top = "10%";
 $.addressTitle.font = {
@@ -69,7 +64,6 @@ $.AttireContent.font = {
 	fontWeight:"normal",
 };
 
-// $.vacancyCurrent.borderWidth = 1;
 $.vacancyCurrent.top = "25%";
 $.vacancyCurrent.height = "75%";
 $.vacancyCurrent.bottom = 0;
@@ -78,7 +72,6 @@ $.vacancyCurrent.font = {
 	fontWeight:"bold",
 };
 
-// $.vacancyMax.borderWidth = 1;
 $.vacancyMax.height = "40%";
 $.vacancyMax.bottom = 0;
 $.vacancyMax.font = {
@@ -103,7 +96,15 @@ $.applyText.font = {
 	fontSize:30*dp_width_rate,
 	fontWeight:"bold",
 };
+//END OF FORMAT
 
-//setValues
+//FUNCTION
+//END OF FUNCTION
+
+//HANDLER
 $.photo.image = position.image;
 $.addressTitle.text = position.description;
+//END OF HANDLER
+
+//LOGIC
+//END OF LOGIC

@@ -1,13 +1,9 @@
+//PROPERTIES
 var args = arguments[0] || {};
+//END OF PEPERTIES
 
+//FORMAT
 var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
-// if(Ti.Platform.osname == 'android')
-// {
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-// }
-// else{
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-// }
 
 $.tab_all_text.font = {
 	fontSize:25*dp_width_rate,
@@ -23,7 +19,9 @@ $.tab_confirmed_text.font = {
 	fontSize:25*dp_width_rate,
 	fontWeight:"normal",
 };
+//END OF FORMAT
 
+//FUNCTION
 var init = function(){
 	$.tab_all.backgroundColor = "#878787";
 	$.tab_accepted.backgroundColor = "#FFFFFF";
@@ -33,66 +31,7 @@ var init = function(){
 	$.tab_confirmed_text.color = "#000000";
 };
 
-init();
-
-//testing data
-var activated = "all";
-var application1 = {
-	dateTime:"21-03-2015",
-	status:"PROCESSING",
-	salary:9.5,
-	hotel:"Pan Pacific Hotel",
-	period:"17:30 - 23:30",
-};
-var application2 = {
-	dateTime:"23-03-2015",
-	status:"PROCESSING",
-	salary:10.5,
-	hotel:"Amara Singapore",
-	period:"17:30 - 23:30",
-};
-var application3 = {
-	dateTime:"24-03-2015",
-	status:"ACCEPTED",
-	salary:8.5,
-	hotel:"Amara Sanctuary Resort Sentosa",
-	period:"17:30 - 23:30",
-};
-var application4 = {
-	dateTime:"26-03-2015",
-	status:"CONFIRMED",
-	salary:8.5,
-	hotel:"Ban HengPavilion",
-	period:"17:30 - 23:30",
-};
-var application5 = {
-	dateTime:"30-03-2015",
-	status:"CONFIRMED",
-	salary:11.5,
-	hotel:"Four Seasons Hotel Singapore",
-	period:"17:30 - 23:30",
-};
-
-var applications = [];
-applications.push(application1);
-applications.push(application2);
-applications.push(application3);
-applications.push(application4);
-applications.push(application5);
-
-var position = {
-	image:"/images/hotel1.jpg",
-	description:"Ah Yat Abalone Forum Restaurant",
-	StartTime:"17:00",
-	EndTime:"23:30",
-	Salary:12,
-	Vacancy:12,
-	MaxVacancy:12,
-};
-//test data end
-
 function addElement(application){
-	
 	var leftBackgroundColor = "#878787";
 	if(application.status == "CONFIRMED"){
 		leftBackgroundColor = "#4BCFED";
@@ -252,11 +191,9 @@ var switchTab = function(tab){
 		}
 	}
 };
+//END OF FUNCTION
 
-for(var i=0;i<applications.length;i++){
-	$.body.add(addElement(applications[i]));
-}
-
+//HANDLER
 $.tab_all.addEventListener('click',function(){
 	switchTab("all");
 	$.body.removeAllChildren();
@@ -282,3 +219,69 @@ $.tab_confirmed.addEventListener('click',function(){
 		}
 	}
 });
+//END OF HANDLER
+
+//LOGIC
+init();
+//END OF LOGIC
+
+//TEST
+var activated = "all";
+var application1 = {
+	dateTime:"21-03-2015",
+	status:"PROCESSING",
+	salary:9.5,
+	hotel:"Pan Pacific Hotel",
+	period:"17:30 - 23:30",
+};
+var application2 = {
+	dateTime:"23-03-2015",
+	status:"PROCESSING",
+	salary:10.5,
+	hotel:"Amara Singapore",
+	period:"17:30 - 23:30",
+};
+var application3 = {
+	dateTime:"24-03-2015",
+	status:"ACCEPTED",
+	salary:8.5,
+	hotel:"Amara Sanctuary Resort Sentosa",
+	period:"17:30 - 23:30",
+};
+var application4 = {
+	dateTime:"26-03-2015",
+	status:"CONFIRMED",
+	salary:8.5,
+	hotel:"Ban HengPavilion",
+	period:"17:30 - 23:30",
+};
+var application5 = {
+	dateTime:"30-03-2015",
+	status:"CONFIRMED",
+	salary:11.5,
+	hotel:"Four Seasons Hotel Singapore",
+	period:"17:30 - 23:30",
+};
+
+var applications = [];
+applications.push(application1);
+applications.push(application2);
+applications.push(application3);
+applications.push(application4);
+applications.push(application5);
+
+var position = {
+	image:"/images/hotel1.jpg",
+	description:"Ah Yat Abalone Forum Restaurant",
+	StartTime:"17:00",
+	EndTime:"23:30",
+	Salary:12,
+	Vacancy:12,
+	MaxVacancy:12,
+};
+
+for(var i=0;i<applications.length;i++){
+	$.body.add(addElement(applications[i]));
+}
+//END OF TEST
+

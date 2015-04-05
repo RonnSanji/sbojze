@@ -1,5 +1,18 @@
+//PROPERTIES
 var args = arguments[0] || {};
 
+var dateStart = new Date();
+var dateStartString = Alloy.Globals.commonFunc.formatDate(dateStart);
+var dateEnd = new Date(dateStart.valueOf()+86400000*3);
+var dateEndString = Alloy.Globals.commonFunc.formatDate(dateEnd);
+
+$.fromDate.text = dateStartString;
+$.toDate.text = dateEndString;
+
+var picker;
+//END OF PROPERTIES
+
+//FORMAT
 var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
 
 $.dateText.font = {
@@ -41,7 +54,9 @@ $.toDate.font = {
 	fontSize:40*dp_width_rate,
 	fontWeight:'normal',
 };
+//END OF FORMAT
 
+//FUNCTION
 var AddElement = function(position){
 	var Layer = Ti.UI.createView({
 		top:0,
@@ -126,7 +141,47 @@ var AddElement = function(position){
 	$.jobList.add(BottomBorder);
 };
 
+var retrieveFromDate = function(e){
+	if(e.value > dateEnd){
+		alert("start date should be earlier than end date");
+	}else{
+		dateStart = e.value;
+		dateStartString = Alloy.Globals.commonFunc.formatDate(dateStart);
+		$.fromDate.text = dateStartString;
+	}
+	$.viewSearch.remove(picker);
+};
+var retrieveToDate = function(e){
+	if(dateStart > e.value){
+		alert("start date should be earlier than end date");
+	}else{
+		dateEnd = e.value;
+		dateEndString = Alloy.Globals.commonFunc.formatDate(dateEnd);
+		$.toDate.text = dateEndString;
+	}
+	$.viewSearch.remove(picker);
+};
+//END OF FUNCTION
 
+//HANDLER
+$.fromView.addEventListener('click',function(){
+	picker = Alloy.createController(Alloy.CFG.PATH_DATEPICKER,{
+		initValue:dateStart,
+		callback:retrieveFromDate,
+	}).getView("viewDatePicker");
+	$.viewSearch.add(picker);
+});
+
+$.toView.addEventListener('click',function(){
+	picker = Alloy.createController(Alloy.CFG.PATH_DATEPICKER,{
+		initValue:dateEnd,
+		callback:retrieveToDate,
+	}).getView("viewDatePicker");
+	$.viewSearch.add(picker);
+});
+//END OF HANDLER
+
+//TEST
 var positionList = [];
 var position1 = {
 	hotel:"Pan Pacific Hotel",
@@ -168,52 +223,4 @@ positionList.push(position6);
 for(var i=0;i<positionList.length;i++){
 	AddElement(positionList[i]);
 }
-
-var dateStart = new Date();
-var dateStartString = Alloy.Globals.commonFunc.formatDate(dateStart);
-var dateEnd = new Date(dateStart.valueOf()+86400000*3);
-var dateEndString = Alloy.Globals.commonFunc.formatDate(dateEnd);
-
-$.fromDate.text = dateStartString;
-$.toDate.text = dateEndString;
-
-var picker;
-
-var retrieveFromDate = function(e){
-	// alert("from"+e.value);
-	if(e.value > dateEnd){
-		alert("start date should be earlier than end date");
-	}else{
-		dateStart = e.value;
-		dateStartString = Alloy.Globals.commonFunc.formatDate(dateStart);
-		$.fromDate.text = dateStartString;
-	}
-	$.viewSearch.remove(picker);
-};
-var retrieveToDate = function(e){
-	// alert("to"+e.value);	
-	if(dateStart > e.value){
-		alert("start date should be earlier than end date");
-	}else{
-		dateEnd = e.value;
-		dateEndString = Alloy.Globals.commonFunc.formatDate(dateEnd);
-		$.toDate.text = dateEndString;
-	}
-	$.viewSearch.remove(picker);
-};
-
-$.fromView.addEventListener('click',function(){
-	picker = Alloy.createController(Alloy.CFG.PATH_DATEPICKER,{
-		initValue:dateStart,
-		callback:retrieveFromDate,
-	}).getView("viewDatePicker");
-	$.viewSearch.add(picker);
-});
-
-$.toView.addEventListener('click',function(){
-	picker = Alloy.createController(Alloy.CFG.PATH_DATEPICKER,{
-		initValue:dateEnd,
-		callback:retrieveToDate,
-	}).getView("viewDatePicker");
-	$.viewSearch.add(picker);
-});
+//END OF TEST

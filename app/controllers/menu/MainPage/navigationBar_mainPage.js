@@ -1,21 +1,9 @@
+//PROPERTIES
 var args = arguments[0] || {};
+//END OF PEPERTIES
 
+//FORMAT
 var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
-// if(Ti.Platform.osname == 'android')
-// {
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-// }
-// else{
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-// }
-
-// var statusBarheight;
-// if(Ti.Platform.osname == 'android'){
-	// statusBarheight = 25;
-// }else{
-	// statusBarheight = 20;
-// }
-// $.navigator.top = statusBarheight;
 
 $.menuBtn.width = 50*dp_width_rate;
 $.menuBtn.height = 50*dp_width_rate;
@@ -23,6 +11,13 @@ $.menuBtn.height = 50*dp_width_rate;
 $.searchBtn.width = 50*dp_width_rate;
 $.searchBtn.height = 50*dp_width_rate;
 
+//END OF FORMAT
+
+//FUNCTION
+//END OF FUNCTION
+
+//HANDLER
 $.menuBtn.addEventListener('click',function(){
 	Ti.App.fireEvent('showMenu',{});
 });
+//END OF HANDLER

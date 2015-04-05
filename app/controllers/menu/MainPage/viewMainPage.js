@@ -1,14 +1,15 @@
+//PROPERTIES
 var args = arguments[0] || {};
+//END OF PEPERTIES
 
+//FORMAT
 var dp_width_rate = Alloy.Globals.DP_WIDTH_RATE;
-// if(Ti.Platform.osname == 'android')
-// {
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / Titanium.Platform.displayCaps.logicalDensityFactor / 720;
-// }
-// else{
-	// dp_width_rate = Titanium.Platform.displayCaps.platformWidth / 720;
-// }
+//END OF FORMAT
 
+//FUNCTION
+//END OF FUNCTION
+
+//HANDLER
 function addPosition(position){
 	
 	var layer = Ti.UI.createView({
@@ -273,7 +274,12 @@ var position3 = {
 	Vacancy:12,
 	MaxVacancy:24,
 };
+//END OF HANDLER
 
+//LOGIC
+//END OF LOGIC
+
+//TEST
 var positionList1 = [];
 positionList1.push(position1);
 positionList1.push(position2);
@@ -318,3 +324,4 @@ var date2 = "TOMORROW-03/04/2015";
 
 addPositionsByDate(date1,positionList1);
 addPositionsByDate(date2,positionList2);
+//END OF TEST
